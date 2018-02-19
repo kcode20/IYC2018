@@ -1,6 +1,8 @@
 // @flow
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+import Home from './components/Home';
 import Navigation from './components/Navigation';
 
 type Props = {};
@@ -9,18 +11,24 @@ type State = {};
 class App extends Component<Props, State> {
 	render() {
 		return (
+
 			<div className="App">
-				<Navigation />
-				<header className="App-header">
-					<img src={logo} className="App-logo" alt="logo" />
-					<h1 className="App-title">Welcome to React</h1>
-				</header>
-				<p className="App-intro">
-					To get started, edit <code>src/App.js</code> and save to reload.
-				</p>
+				<Router>
+					<div>
+						<Navigation />
+						<Route exact path="/" component={Home} />
+						<Route path="/about" component={Register} />
+					</div>
+				</Router>
 			</div>
 		);
 	}
 }
+
+const Register = () => (
+	<div>
+		<h2>Register</h2>
+	</div>
+);
 
 export default App;

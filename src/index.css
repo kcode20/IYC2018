@@ -19,7 +19,15 @@
   to {
     transform: rotate(360deg); } }
 
+.navbar-brand {
+  padding-bottom: 0px;
+  padding-top: 0px; }
+
+nav.navbar.navbar-inverse {
+  margin-bottom: 0px; }
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  margin-top: 50px; }

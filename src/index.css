@@ -26,6 +26,13 @@
 nav.navbar.navbar-inverse {
   margin-bottom: 0px; }
 
+.home .cover-photo {
+  height: 85vh;
+  width: 100%; }
+  @media only screen and (max-width: 500px) {
+    .home .cover-photo {
+      height: 50vh; } }
+
 body {
   margin: 0;
   padding: 0;

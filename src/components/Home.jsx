@@ -1,34 +1,16 @@
 // @flow
 import React from 'react';
-// import { Link } from 'react-router-dom';
-import { Carousel } from 'react-bootstrap';
+// import { Grid, Row, Col } from 'react-bootstrap';
 
-import Carousel1 from '../assets/images/iyc-home.jpg'
+import HomePhoto from '../assets/images/iyc-home.jpg';
+// import ignite from '../assets/images/ignite.png';
+// import lead from '../assets/images/lead.png';
+// import transform from '../assets/images/transform.png';
 
 const Home = () => (
-  <Carousel>
-    <Carousel.Item>
-      <img width={900} height={500} alt="900x500" src={Carousel1} />
-      <Carousel.Caption>
-        <h3>First slide label</h3>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </Carousel.Caption>
-    </Carousel.Item>
-    <Carousel.Item>
-      <img width={900} height={500} alt="900x500" src="/carousel.png" />
-      <Carousel.Caption>
-        <h3>Second slide label</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </Carousel.Caption>
-    </Carousel.Item>
-    <Carousel.Item>
-      <img width={900} height={500} alt="900x500" src="/carousel.png" />
-      <Carousel.Caption>
-        <h3>Third slide label</h3>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-      </Carousel.Caption>
-    </Carousel.Item>
-  </Carousel>
+	<div className="home">
+		<img className="cover-photo" src={HomePhoto} alt="IYC 2016" />
+	</div>
 );
 
 export default Home;

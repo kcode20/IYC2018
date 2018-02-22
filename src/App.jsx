@@ -1,7 +1,9 @@
 // @flow
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
+import store from './store';
 import Home from './components/Home';
 import Navigation from './components/Navigation';
 
@@ -11,16 +13,15 @@ type State = {};
 class App extends Component<Props, State> {
 	render() {
 		return (
-
-			<div className="App">
+			<Provider store={store}>
 				<Router>
-					<div>
+					<div className="App">
 						<Navigation />
 						<Route exact path="/" component={Home} />
 						<Route path="/about" component={Register} />
 					</div>
 				</Router>
-			</div>
+			</Provider>
 		);
 	}
 }

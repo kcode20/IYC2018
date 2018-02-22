@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import Home from './components/Home';
 import Navigation from './components/Navigation';
+import Registration from './components/Registration';
 
 type Props = {};
 type State = {};
@@ -18,7 +19,7 @@ class App extends Component<Props, State> {
 					<div className="App">
 						<Navigation />
 						<Route exact path="/" component={Home} />
-						<Route path="/about" component={Register} />
+						<Route path="/register" component={Registration} />
 					</div>
 				</Router>
 			</Provider>

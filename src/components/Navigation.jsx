@@ -16,7 +16,7 @@ const Navigation = ({ history }) => (
 		</Navbar.Header>
 		<Navbar.Collapse>
 			<Nav pullRight>
-				<NavItem eventKey={1} onClick={() => history.push('/about')} >
+				<NavItem eventKey={1} onClick={() => history.push('/register')}>
 					Register
 				</NavItem>
 			</Nav>

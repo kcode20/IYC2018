@@ -30,19 +30,9 @@ const PersonalInformation = ({ handleSubmit, handleBack }) => (
 						/>
 					</div>
 					<div>
-						<ControlLabel>Mailing Address</ControlLabel>
+						<ControlLabel>Phone</ControlLabel>
 						<Field
-							name="mailing"
-							placeholder="123 Ocean St."
-							className="form-control"
-							component="input"
-							type="text"
-						/>
-					</div>
-					<div>
-						<ControlLabel>Home Phone</ControlLabel>
-						<Field
-							name="homephone"
+							name="phone"
 							placeholder="123-456-7890"
 							className="form-control"
 							component="input"
@@ -50,14 +40,63 @@ const PersonalInformation = ({ handleSubmit, handleBack }) => (
 						/>
 					</div>
 					<div>
-						<ControlLabel>Cell Phone</ControlLabel>
-						<Field
-							name="cellphone"
-							placeholder="123-456-7890"
-							className="form-control"
-							component="input"
-							type="text"
-						/>
+						<ControlLabel>Age</ControlLabel>
+						<div className="form-input">
+							<p>
+								<Field
+									name="age"
+									component="input"
+									type="radio"
+									value="Little Spark"
+								/>{' '}
+								Little Sparks (3-6){' '}
+							</p>
+							<p>
+								<Field
+									name="age"
+									component="input"
+									type="radio"
+									value="Fireflies"
+								/>{' '}
+								Fireflies (7-12)
+							</p>
+							<p>
+								<Field
+									name="age"
+									component="input"
+									type="radio"
+									value="Sparklers"
+								/>{' '}
+								Sparklers (13-17)
+							</p>
+							<p>
+								<Field
+									name="age"
+									component="input"
+									type="radio"
+									value="Ignitors"
+								/>{' '}
+								Ignitors (18-25)
+							</p>
+							<p>
+								<Field
+									name="age"
+									component="input"
+									type="radio"
+									value="Fireworker"
+								/>{' '}
+								Fireworkers (25-39)
+							</p>
+							<p>
+								<Field
+									name="age"
+									component="input"
+									type="radio"
+									value="Campfire"
+								/>{' '}
+								Campfire (40+)
+							</p>
+						</div>
 					</div>
 				</div>
 				<Col md={6}>

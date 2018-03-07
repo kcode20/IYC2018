@@ -98,6 +98,15 @@ const PersonalInformation = ({ handleSubmit, handleBack }) => (
 							</p>
 						</div>
 					</div>
+					<div>
+						<ControlLabel>Do You Have Any Allergies?</ControlLabel>
+						<Field
+							name="allergies"
+							className="form-control"
+							component="input"
+							type="text"
+						/>
+					</div>
 				</div>
 				<Col md={6}>
 					<Button type="button" className="previous" onClick={handleBack}>

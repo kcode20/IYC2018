@@ -1,9 +1,13 @@
 // @flow
 import React from 'react';
-import { paypalSandboxKey, paypalProductionKey } from '../../../secrets';
+import { connect } from 'react-redux';
+import { reduxForm, Field, formValueSelector } from 'redux-form';
+import { ControlLabel, Col, Grid, Button } from 'react-bootstrap';
 
 import PayPalButton from './PayPalButton';
+import { paypalSandboxKey, paypalProductionKey } from '../../../secrets';
 
+const selector = formValueSelector('YouthSummitRegistration');
 const CLIENT = {
 	sandbox: paypalSandboxKey,
 	production: paypalProductionKey,
@@ -11,29 +15,157 @@ const CLIENT = {
 
 //remember to turn to true when deploying
 const ENV = 'sandbox';
-const REGISTRATION_PRICE = 30.0;
-
-const Payment = () => {
-	const onSuccess = payment => console.log('Successful payment!', payment);
-	const onError = error =>
-		console.log('Erroneous payment OR failed to load script!', error);
-	const onCancel = data => console.log('Cancelled payment!', data);
-
-	return (
-		<div>
-			blah, Blah, BLAH!! Just cough up the money! :
-			<PayPalButton
-				client={CLIENT}
-				env={ENV}
-				commit={true}
-				currency={'USD'}
-				total={REGISTRATION_PRICE}
-				onSuccess={onSuccess}
-				onError={onError}
-				onCancel={onCancel}
-			/>
-		</div>
-	);
+const REGISTRATION_PRICE = 25.0;
+type Props = {
+	brunchAddon: string,
+	shirtAddon: string,
+	handleSubmit: Function,
+	handleBack: Function,
+};
+type State = {
+	issue: Object,
+	complete: boolean,
 };
 
-export default Payment;
+export class Payment extends React.Component<Props, State> {
+	state = { issue: { exists: false, reason: null }, complete: false };
+
+	render() {
+		let { brunchAddon, shirtAddon, handleSubmit, handleBack } = this.props;
+		const onSuccess = payment => this.setState({ complete: true });
+		const onError = error =>
+			this.setState({
+				issue: { exists: true, reason: 'error' },
+			});
+		const onCancel = data =>
+			this.setState({
+				issue: { exists: true, reason: 'canceled' },
+			});
+		let brunchPrice = brunchAddon == 'Yes' ? 20 : 0;
+		let shirtPrice = shirtAddon == 'Yes' ? 15 : 0;
+		let total = REGISTRATION_PRICE + brunchPrice + shirtPrice;
+		console.log(total);
+		return (
+			<form onSubmit={handleSubmit}>
+				<Grid>
+					<Col xs={12} md={8}>
+						<div>
+							{this.state.issue.exists &&
+							this.state.issue.reason === 'canceled' ? (
+								<div className="alert alert-danger" role="alert">
+									{' '}
+									Oops! It seems as if you canceled your payment. Please try
+									again.
+								</div>
+							) : this.state.issue.reason === 'error' ? (
+								<div className="alert alert-danger" role="alert">
+									{' '}
+									Oops! There was an error processing your payment. Please try
+									again.{' '}
+								</div>
+							) : (
+								''
+							)}
+							{this.state.complete && (
+								<div className="alert alert-success" role="alert">
+									Your payment was recieved! Please press submit to complete
+									your registration.
+								</div>
+							)}
+							<div>
+								<ControlLabel>
+									Would you like to purchase tickets to the State of the
+									Conference Brunch, where the proceeds benefit the IYC
+									Scholarship and regionals? $20
+								</ControlLabel>
+								<div className="form-input">
+									<Field
+										name="sc brunch?"
+										component="input"
+										type="radio"
+										value="Yes"
+									/>{' '}
+									Yes{' '}
+									<Field
+										name="sc brunch?"
+										component="input"
+										type="radio"
+										value="No"
+									/>{' '}
+									No
+								</div>
+							</div>
+							<div>
+								<ControlLabel>
+									Would you like to add the official IYC shirt (available for
+									pickup at IYC)? $15
+								</ControlLabel>
+								<div className="form-input">
+									<Field
+										name="shirt?"
+										component="input"
+										type="radio"
+										value="Yes"
+									/>{' '}
+									Yes{' '}
+									<Field
+										name="shirt?"
+										component="input"
+										type="radio"
+										value="No"
+									/>{' '}
+									No
+								</div>
+							</div>
+							<Col md={6}>
+								{!this.state.complete && (
+									<Button
+										type="button"
+										className="previous"
+										onClick={handleBack}
+									>
+										Previous
+									</Button>
+								)}
+							</Col>
+							<Col md={6}>
+								{this.state.complete ? (
+									<Button
+										bsStyle="primary"
+										type="submit"
+										align="right"
+										className="next"
+									>
+										Submit
+									</Button>
+								) : (
+									<PayPalButton
+										client={CLIENT}
+										env={ENV}
+										commit={true}
+										currency={'USD'}
+										total={total}
+										onSuccess={onSuccess}
+										onError={onError}
+										onCancel={onCancel}
+									/>
+								)}
+							</Col>
+						</div>
+					</Col>
+				</Grid>
+			</form>
+		);
+	}
+}
+
+export default connect(state => ({
+	shirtAddon: selector(state, 'shirt?'),
+	brunchAddon: selector(state, 'sc brunch?'),
+}))(
+	reduxForm({
+		form: 'YouthSummitRegistration', // <------ same form name
+		destroyOnUnmount: false, // <------ preserve form data
+		forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
+	})(Payment)
+);

@@ -28,7 +28,7 @@ export class YouthRegistration extends React.Component {
 		const { form } = this.props;
 		const values = form['YouthSummitRegistration'].values;
 		const google_script =
-			'https://script.google.com/macros/u/0/s/AKfycbx4TzdY7U6F9_E0MJCnZ_7EegtELvaGoQZ3gwPToHSuTYNjS65q/exec';
+			'https://script.google.com/macros/s/AKfycbx4TzdY7U6F9_E0MJCnZ_7EegtELvaGoQZ3gwPToHSuTYNjS65q/exec';
 
 		axios
 			.get(google_script, { params: values })

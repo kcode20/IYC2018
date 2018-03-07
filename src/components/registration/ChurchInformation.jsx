@@ -1,7 +1,14 @@
 import React from 'react';
 import { Field, reduxForm, formValueSelector } from 'redux-form';
 import { connect } from 'react-redux';
-import { Grid, Col, ControlLabel, Button } from 'react-bootstrap';
+import {
+	Grid,
+	Col,
+	ControlLabel,
+	Button,
+	FormControl,
+	HelpBlock,
+} from 'react-bootstrap';
 import CheckboxGroup from './CheckboxGroup';
 
 const selector = formValueSelector('YouthSummitRegistration');
@@ -58,8 +65,14 @@ const options = [
 	},
 ];
 
-const ChurchInformation = ({ handleSubmit, handleBack, youthLeader, role }) => {
+const ChurchInformation = ({
+	handleSubmit,
+	handleBack,
+	youthLeader,
+	transportation,
+}) => {
 	const youthLeaderNameRequired = youthLeader == 'No';
+	const arrivalDepartureRequired = transportation == 'Yes';
 	return (
 		<form onSubmit={handleSubmit}>
 			<Grid>
@@ -148,6 +161,38 @@ const ChurchInformation = ({ handleSubmit, handleBack, youthLeader, role }) => {
 								No
 							</div>
 						</div>
+						{arrivalDepartureRequired && (
+							<div>
+								<ControlLabel>Arrival Information</ControlLabel>
+								<HelpBlock>
+									Include Airline/TrainName, Flight/Train #, and Arrival Time.
+								</HelpBlock>
+								<Field
+									name="arrival"
+									placeholder={`Airline/TrainName:\nFlight/Train #:\nArrival Time:\n`}
+									className="form-control"
+									component={FormControl}
+									componentClass="textarea"
+									rows="4"
+								/>
+							</div>
+						)}
+						{arrivalDepartureRequired && (
+							<div>
+								<ControlLabel>Departure Information</ControlLabel>
+								<HelpBlock>
+									Include Airline/TrainName, Flight/Train #, and Arrival Time.
+								</HelpBlock>
+								<Field
+									name="departure"
+									placeholder={`Airline/TrainName:\nFlight/Train #:\nArrival Time:\n`}
+									className="form-control"
+									component={FormControl}
+									componentClass="textarea"
+									rows="4"
+								/>
+							</div>
+						)}
 					</div>
 					<Col md={6}>
 						<Button type="button" className="previous" onClick={handleBack}>
@@ -167,7 +212,7 @@ const ChurchInformation = ({ handleSubmit, handleBack, youthLeader, role }) => {
 
 export default connect(state => ({
 	youthLeader: selector(state, 'youth leader?'),
-	role: selector(state, 'home church role'),
+	transportation: selector(state, 'request transportation?'),
 }))(
 	reduxForm({
 		form: 'YouthSummitRegistration', // <------ same form name

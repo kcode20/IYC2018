@@ -1,10 +1,6 @@
 // @flow
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
-import { Field, reduxForm } from 'redux-form';
 import { paypalSandboxKey, paypalProductionKey } from '../../../secrets';
-import { formValueSelector } from 'redux-form';
 
 import PayPalButton from './PayPalButton';
 

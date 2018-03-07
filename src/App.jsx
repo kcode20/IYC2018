@@ -27,10 +27,4 @@ class App extends Component<Props, State> {
 	}
 }
 
-const Register = () => (
-	<div>
-		<h2>Register</h2>
-	</div>
-);
-
 export default App;

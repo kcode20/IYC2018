@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Grid, Row, Col, ControlLabel, Button } from 'react-bootstrap';
+import { Grid, Col, ControlLabel, Button } from 'react-bootstrap';
 
 const PersonalInformation = ({ handleSubmit, handleBack }) => (
 	<form onSubmit={handleSubmit}>

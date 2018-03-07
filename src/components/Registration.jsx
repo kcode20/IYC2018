@@ -1,14 +1,6 @@
 import React from 'react';
-import { Link, browserHistory } from 'react-router';
-import { Field, reduxForm } from 'redux-form';
-import {
-	Grid,
-	Row,
-	Col,
-	Button,
-	ControlLabel,
-	ProgressBar,
-} from 'react-bootstrap';
+import { reduxForm } from 'redux-form';
+import { ProgressBar } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import axios from 'axios';
 

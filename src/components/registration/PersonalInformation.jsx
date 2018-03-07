@@ -107,6 +107,29 @@ const PersonalInformation = ({ handleSubmit, handleBack }) => (
 							type="text"
 						/>
 					</div>
+					<div>
+						<ControlLabel>Gender</ControlLabel>
+						<div className="form-input">
+							<p>
+								<Field
+									name="gender"
+									component="input"
+									type="radio"
+									value="Female"
+								/>{' '}
+								Female{' '}
+							</p>
+							<p>
+								<Field
+									name="gender"
+									component="input"
+									type="radio"
+									value="Male"
+								/>{' '}
+								Male{' '}
+							</p>
+						</div>
+					</div>
 				</div>
 				<Col md={6}>
 					<Button type="button" className="previous" onClick={handleBack}>

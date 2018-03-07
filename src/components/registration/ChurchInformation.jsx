@@ -1,90 +1,177 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, formValueSelector } from 'redux-form';
+import { connect } from 'react-redux';
 import { Grid, Col, ControlLabel, Button } from 'react-bootstrap';
+import CheckboxGroup from './CheckboxGroup';
 
-const ChurchInformation = ({ handleSubmit, handleBack }) => (
-	<form onSubmit={handleSubmit}>
-		<Grid>
-			<Col xs={12} md={8}>
-				<div className="chunk">
-					<h3> Church Information </h3>
-					<div>
-						<ControlLabel>Branch Church</ControlLabel>
-						<Field
-							name="church"
-							placeholder="Branch 2"
-							className="form-control"
-							component="input"
-							type="text"
-						/>
-					</div>
-					<div>
-						<ControlLabel>Pastor's Name</ControlLabel>
-						<Field
-							name="pastor"
-							placeholder="Pastor John Doe"
-							className="form-control"
-							component="input"
-							type="text"
-						/>
-					</div>
-					<div>
-						<ControlLabel>Are You A Youth Leader or Youth Worker?</ControlLabel>
-						<div className="form-input">
+const selector = formValueSelector('YouthSummitRegistration');
+const options = [
+	{
+		label: 'Pastor',
+		value: 'Pastor',
+	},
+	{
+		label: 'Minister',
+		value: 'Minister',
+	},
+	{
+		label: 'Musician',
+		value: 'Musician',
+	},
+	{
+		label: 'Choir Director',
+		value: 'Choir Director',
+	},
+	{
+		label: 'Choir Member',
+		value: 'Choir Member',
+	},
+	{
+		label: 'Sunday School Superintendent',
+		value: 'Sunday School Superintendent',
+	},
+	{
+		label: 'Sunday School Teacher',
+		value: 'Sunday School Teacher',
+	},
+	{
+		label: 'Usher',
+		value: 'Usher',
+	},
+	{
+		label: 'Youth Leader',
+		value: 'Youth Leader',
+	},
+	{
+		label: 'Church Volunteer',
+		value: 'Church Volunteer',
+	},
+	{
+		label: 'Not Working in My Local Church',
+		value: 'Not Working in My Local Church',
+	},
+	{
+		label:
+			'Don’t Work in an auxiliary at my church, BUT I would love to start ',
+		value:
+			'Don’t Work in an auxiliary at my church, BUT I would love to start ',
+	},
+];
+
+const ChurchInformation = ({ handleSubmit, handleBack, youthLeader, role }) => {
+	const youthLeaderNameRequired = youthLeader == 'No';
+	return (
+		<form onSubmit={handleSubmit}>
+			<Grid>
+				<Col xs={12} md={8}>
+					<div className="chunk">
+						<h3> Church Information </h3>
+						<div>
+							<ControlLabel>Church Name</ControlLabel>
 							<Field
-								name="role"
+								name="church"
+								placeholder="Branch 2"
+								className="form-control"
 								component="input"
-								type="radio"
-								value="Youth Leader"
-							/>{' '}
-							Youth Leader{' '}
+								type="text"
+							/>
+						</div>
+						<div>
+							<ControlLabel>Pastor's Name</ControlLabel>
 							<Field
-								name="role"
+								name="pastor"
+								placeholder="Pastor John Doe"
+								className="form-control"
 								component="input"
-								type="radio"
-								value="Youth Worker"
-							/>{' '}
-							Youth Worker
+								type="text"
+							/>
+						</div>
+						<div>
+							<ControlLabel>Are You A Youth Leader?</ControlLabel>
+							<div className="form-input">
+								<Field
+									name="youth leader?"
+									component="input"
+									type="radio"
+									value="Yes"
+								/>{' '}
+								Yes{' '}
+								<Field
+									name="youth leader?"
+									component="input"
+									type="radio"
+									value="No"
+								/>{' '}
+								No
+							</div>
+						</div>
+						{youthLeaderNameRequired && (
+							<div>
+								<ControlLabel>Youth Leader's Name</ControlLabel>
+								<Field
+									name="youth leader name"
+									placeholder="John Doe"
+									className="form-control"
+									component="input"
+									type="text"
+								/>
+							</div>
+						)}
+						<div>
+							<ControlLabel>In my home church I am...</ControlLabel>
+							<div className="form-input">
+								<Field
+									name="home church role"
+									component={CheckboxGroup}
+									options={options}
+								/>
+							</div>
+						</div>
+						<div>
+							<ControlLabel>
+								Do You Want to Request Transportation?
+							</ControlLabel>
+							<div className="form-input">
+								<Field
+									name="request transportation?"
+									component="input"
+									type="radio"
+									value="Yes"
+								/>{' '}
+								Yes{' '}
+								<Field
+									name="request transportation?"
+									component="input"
+									type="radio"
+									value="No"
+								/>{' '}
+								No
+							</div>
 						</div>
 					</div>
-					<div>
-						<ControlLabel>How Many Youth Do You Lead?</ControlLabel>
-						<Field
-							name="num_of_youth"
-							placeholder="#"
-							className="form-control"
-							component="input"
-							type="text"
-						/>
-					</div>
-					<div>
-						<ControlLabel>What auxiliaries do you have?</ControlLabel>
-						<Field
-							name="auxilary"
-							placeholder="Orchestra, Choir, Outreach"
-							className="form-control"
-							component="input"
-							type="text"
-						/>
-					</div>
-				</div>
-				<Col md={6}>
-					<Button type="button" className="previous" onClick={handleBack}>
-						Previous
-					</Button>
+					<Col md={6}>
+						<Button type="button" className="previous" onClick={handleBack}>
+							Previous
+						</Button>
+					</Col>
+					<Col md={6}>
+						<Button bsStyle="primary" type="submit" className="next">
+							Next
+						</Button>
+					</Col>
 				</Col>
-				<Col md={6}>
-					<Button bsStyle="primary" type="submit" className="next">
-						Next
-					</Button>
-				</Col>
-			</Col>
-		</Grid>
-	</form>
-);
+			</Grid>
+		</form>
+	);
+};
 
-export default reduxForm({
-	form: 'YouthSummitRegistration', // <------ same form name
-	destroyOnUnmount: false, // <------ preserve form data
-	forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
-})(ChurchInformation);
+export default connect(state => ({
+	youthLeader: selector(state, 'youth leader?'),
+	role: selector(state, 'home church role'),
+}))(
+	reduxForm({
+		form: 'YouthSummitRegistration', // <------ same form name
+		destroyOnUnmount: false, // <------ preserve form data
+		forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
+	})(ChurchInformation)
+);

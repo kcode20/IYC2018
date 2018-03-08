@@ -1,10 +1,10 @@
 // @flow
 import React from 'react';
 
-import HomePhoto from '../assets/images/iyc-home.jpg';
+import HomePhoto from '../assets/images/iyc2.png';
 
 const Home = () => (
-	<div className="container">
+	<div className="container home">
 		<div className="row justify-content-center">
 			<div className="col-md-8 col-md-offset-2 intro">
 				<img alt="900x500" style={{ width: '100%' }} src={HomePhoto} />

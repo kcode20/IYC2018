@@ -71,8 +71,8 @@ const ChurchInformation = ({
 	youthLeader,
 	transportation,
 }) => {
-	const youthLeaderNameRequired = youthLeader == 'No';
-	const arrivalDepartureRequired = transportation == 'Yes';
+	const youthLeaderNameRequired = youthLeader === 'No';
+	const arrivalDepartureRequired = transportation === 'Yes';
 	return (
 		<form onSubmit={handleSubmit}>
 			<Grid>

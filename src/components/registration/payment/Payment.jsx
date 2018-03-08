@@ -41,8 +41,8 @@ export class Payment extends React.Component<Props, State> {
 			this.setState({
 				issue: { exists: true, reason: 'canceled' },
 			});
-		let brunchPrice = brunchAddon == 'Yes' ? 20 : 0;
-		let shirtPrice = shirtAddon == 'Yes' ? 15 : 0;
+		let brunchPrice = brunchAddon === 'Yes' ? 20 : 0;
+		let shirtPrice = shirtAddon === 'Yes' ? 15 : 0;
 		let total = REGISTRATION_PRICE + brunchPrice + shirtPrice;
 		console.log(total);
 		return (

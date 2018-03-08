@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
-import { Button, Carousel, CarouselItem } from 'react-bootstrap';
 
 import ThanksPhoto from '../../assets/images/iyc3.png';
 

@@ -5,7 +5,7 @@ import { reduxForm, Field, formValueSelector } from 'redux-form';
 import { ControlLabel, Col, Grid, Button } from 'react-bootstrap';
 
 import PayPalButton from './PayPalButton';
-import { paypalSandboxKey, paypalProductionKey } from '../../../../secrets';
+import { paypalSandboxKey, paypalProductionKey } from '../../../secrets';
 
 const selector = formValueSelector('YouthSummitRegistration');
 const CLIENT = {

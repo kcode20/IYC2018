@@ -5,7 +5,7 @@ import { reduxForm, Field, formValueSelector } from 'redux-form';
 import { ControlLabel, Col, Grid, Button } from 'react-bootstrap';
 
 import PayPalButton from './PayPalButton';
-import { paypalSandboxKey, paypalProductionKey } from '../../../secrets';
+import { paypalSandboxKey, paypalProductionKey } from '../../../../secrets';
 
 const selector = formValueSelector('YouthSummitRegistration');
 const CLIENT = {
@@ -14,7 +14,7 @@ const CLIENT = {
 };
 
 //remember to turn to true when deploying
-const ENV = 'sandbox';
+const ENV = 'production';
 const REGISTRATION_PRICE = 25.0;
 type Props = {
 	brunchAddon: string,

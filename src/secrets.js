@@ -1,4 +1,0 @@
-export const paypalSandboxKey =
-	'AWzrvEgSK4eh_SPkMxR4TVhQ_kA3ZtUsFf2vOB2YSyoLa2SF9Hq9_bAs78DQJvwGMyPjmCTL2YONB2Z7';
-export const paypalProductionKey =
-	'AaXmoxzFwd0HRcUAEnVPtjadkuDkaIFWkC0GrD8rxwHd2AueK5VHs2azee3fieppk9t7XHPu-lkzAdXA';

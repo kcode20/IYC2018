@@ -12,15 +12,15 @@ const Navigation = ({ history }) => (
 					<img src={logo} alt="IYC Logo" height="50px" />
 				</Link>
 			</Navbar.Brand>
-			<Navbar.Toggle />
+			{/* <Navbar.Toggle /> */}
 		</Navbar.Header>
-		<Navbar.Collapse>
+		{/* <Navbar.Collapse>
 			<Nav pullRight>
 				<NavItem eventKey={1} onClick={() => history.push('/register')}>
 					Register
 				</NavItem>
 			</Nav>
-		</Navbar.Collapse>
+		</Navbar.Collapse>*/}
 	</Navbar>
 );
 

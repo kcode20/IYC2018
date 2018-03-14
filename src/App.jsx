@@ -19,7 +19,7 @@ class App extends Component<Props, State> {
 					<div className="App">
 						<Navigation />
 						<Route exact path="/" component={Home} />
-						<Route path="/register" component={Registration} />
+						{/* <Route path="/register" component={Registration} /> */}
 					</div>
 				</Router>
 			</Provider>

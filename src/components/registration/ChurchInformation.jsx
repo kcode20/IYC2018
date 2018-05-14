@@ -76,7 +76,7 @@ const ChurchInformation = ({
 	return (
 		<form onSubmit={handleSubmit}>
 			<Grid>
-				<Col xs={12} md={8}>
+				<Col xs={12} md={8} className="column col-md-offset-2">
 					<div className="chunk">
 						<h3> Church Information </h3>
 						<div>

@@ -5,7 +5,7 @@ import { Grid, Col, ControlLabel, Button } from 'react-bootstrap';
 const PersonalInformation = ({ handleSubmit, handleBack }) => (
 	<form onSubmit={handleSubmit}>
 		<Grid className="row" fluid={true}>
-			<Col xs={12} md={8}>
+			<Col xs={12} md={8} className="column col-md-offset-2">
 				<div className="chunk">
 					<h3> Personal Information </h3>
 					<div>
@@ -49,7 +49,7 @@ const PersonalInformation = ({ handleSubmit, handleBack }) => (
 									type="radio"
 									value="Little Spark"
 								/>{' '}
-								Little Sparks (3-6){' '}
+								Little Sparks (3-6)
 							</p>
 							<p>
 								<Field

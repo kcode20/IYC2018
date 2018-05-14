@@ -55,7 +55,7 @@ export class YouthRegistration extends React.Component {
 		const values = ((this.props.form || {})['YouthSummitRegistration'] || {})
 			.values;
 		return (
-			<div>
+			<div className="registration">
 				<ProgressBar bsStyle="warning" now={20 * page} />
 				{page === 1 && (
 					<EventDetails

@@ -3,15 +3,17 @@ body {
   color: white;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  margin-top: 50px; }
+  font-family: sans-serif; }
 
 .navbar-brand {
   padding-bottom: 0px;
   padding-top: 0px; }
 
 nav.navbar.navbar-inverse {
-  margin-bottom: 0px; }
+  margin-bottom: 0px;
+  border-bottom: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: none; }
 
 .home {
   background-color: black;
@@ -30,6 +32,14 @@ nav.navbar.navbar-inverse {
     opacity: 0.7;
     width: 100%;
     height: 100vh; }
+  .home .header {
+    position: relative;
+    text-align: center;
+    top: -60%;
+    border-bottom: 15px solid white;
+    border-top: 15px solid white;
+    width: 65%;
+    margin: auto; }
   .home .about {
     padding: 16px;
     background-color: #242424; }
@@ -55,5 +65,7 @@ nav.navbar.navbar-inverse {
     padding-top: 5px;
     font-size: 16px; }
 
-.registration .column {
-  background-color: red; }
+.registration {
+  margin-top: 50px; }
+  .registration .column {
+    background-color: red; }

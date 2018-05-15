@@ -21,6 +21,16 @@
 		height: 100vh;
 	}
 
+	.header {
+		position: relative;
+		text-align: center;
+		top: -60%;
+		border-bottom: 15px solid white;
+		border-top: 15px solid white;
+		width: 65%;
+		margin: auto;
+	}
+
 	.about {
 		padding: 16px;
 		background-color: #242424;

@@ -17,8 +17,13 @@ const Home = () => {
 					preserveAspectRatio="none"
 				>
 					<polygon fill="gray" points="100,0 0,100 0,0" />
-					<polygon fill="yellow" points="0,100 100,0 100,100" />
+					<polygon fill="orange" points="0,100 100,0 100,100" />
 				</svg>
+				<div className="header">
+					<h3> August 26th - September 2nd </h3>
+					<h1> International Youth Conference 2018</h1>
+					<p> APOSTOLIC FAITH CHURCH, 265 Lafayette Ave, Brooklyn, NY 11216 </p>
+				</div>
 			</div>
 			<div className="about">
 				<Countdown endtime={deadline} />

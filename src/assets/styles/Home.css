@@ -19,10 +19,30 @@
     position: relative;
     text-align: center;
     top: -60%;
-    border-bottom: 15px solid white;
-    border-top: 15px solid white;
     width: 65%;
     margin: auto; }
+    .home .header .head {
+      border-bottom: 15px solid white;
+      border-top: 15px solid white;
+      margin-bottom: 15px; }
+    .home .header .head-button {
+      background-color: #242424;
+      background-image: none;
+      border: none; }
+  .home .countdown {
+    background-color: #242424;
+    padding: 10px; }
+    .home .countdown .counter {
+      width: 75%;
+      margin: auto;
+      text-align: center; }
   .home .about {
     padding: 16px;
-    background-color: #242424; }
+    background-color: white;
+    color: black; }
+  @media only screen and (max-width: 600px) {
+    .home .header {
+      width: 100%; }
+    .home .countdown {
+      visibility: hidden;
+      height: 0px; } }

@@ -201,7 +201,7 @@ const ChurchInformation = ({
 					</Col>
 					<Col md={6}>
 						<Button bsStyle="primary" type="submit" className="next">
-							Next
+							Finish
 						</Button>
 					</Col>
 				</Col>

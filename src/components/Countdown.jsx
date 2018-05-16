@@ -61,7 +61,7 @@ export default class Countdown extends React.Component {
 
 	render() {
 		return (
-			<div id="clockdiv">
+			<div className="clockdiv">
 				<div>
 					<span className="days">{this.state.days}</span>
 					<div className="smalltext">Days</div>

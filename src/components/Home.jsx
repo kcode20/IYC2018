@@ -1,12 +1,14 @@
 // @flow
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import Countdown from './Countdown';
+import { Link } from 'react-router-dom';
 
 import HomePhoto from '../assets/images/iyc2.png';
 import NYCAerial from '../assets/images/NYC-Aerial.jpg';
 
 const Home = () => {
-	const deadline = new Date('August 26, 2018 19:30:00');
+	const deadline = new Date('August 26, 2018 8:00:00');
 	return (
 		<div className="home">
 			<div className="cover">
@@ -20,13 +22,25 @@ const Home = () => {
 					<polygon fill="orange" points="0,100 100,0 100,100" />
 				</svg>
 				<div className="header">
-					<h3> August 26th - September 2nd </h3>
-					<h1> International Youth Conference 2018</h1>
-					<p> APOSTOLIC FAITH CHURCH, 265 Lafayette Ave, Brooklyn, NY 11216 </p>
+					<div className="head">
+						<h3> August 26th - September 2nd </h3>
+						<h1> International Youth Conference 2018</h1>
+						<p>Apostolic Faith Church, 265 Lafayette Ave, Brooklyn, NY 11216</p>
+					</div>
+					<Link to="/register">
+						<Button bsStyle="warning" className="head-button">
+							Register Now!
+						</Button>
+					</Link>
+				</div>
+			</div>
+			<div className="countdown">
+				<div className="counter">
+					<h1> Countdown Until IYC 2018: </h1>
+					<Countdown endtime={deadline} />
 				</div>
 			</div>
 			<div className="about">
-				<Countdown endtime={deadline} />
 				<h3> It’s LIT! </h3>
 				<p> Friend- </p>
 				<p>
@@ -52,7 +66,3 @@ const Home = () => {
 };
 
 export default Home;
-
-/* 
-			
-*/

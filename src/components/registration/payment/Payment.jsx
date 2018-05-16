@@ -13,7 +13,6 @@ const CLIENT = {
 	production: paypalProductionKey,
 };
 
-//remember to turn to true when deploying
 const ENV = 'production';
 const REGISTRATION_PRICE = 25.0;
 type Props = {

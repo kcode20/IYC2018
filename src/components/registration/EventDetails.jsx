@@ -5,7 +5,7 @@ import { Grid, Col, Button } from 'react-bootstrap';
 const EventDetails = ({ handleSubmit }) => (
 	<form onSubmit={handleSubmit}>
 		<Grid>
-			<Col xs={12} md={8}>
+			<Col xs={12} md={8} className="column col-md-offset-2">
 				<div className="chunk">
 					<h3 className="chunk">Event Details</h3>
 					<p>Friend-</p>

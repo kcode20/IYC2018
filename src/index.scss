@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Kavivanar|Pridi');
 body {
 	background-color: black;
 	color: white;
 	margin: 0;
 	padding: 0;
-	font-family: sans-serif;
-	margin-top: 50px;
+	font-family: 'Kavivanar', cursive;
 }
 
 @import 'assets/styles/Navbar.scss';
 @import 'assets/styles/Home.scss';
+@import 'assets/styles/Countdown.scss';
+@import 'assets/styles/Registration.scss';

@@ -55,8 +55,8 @@ export class YouthRegistration extends React.Component {
 		const values = ((this.props.form || {})['YouthSummitRegistration'] || {})
 			.values;
 		return (
-			<div>
-				<ProgressBar bsStyle="warning" now={20 * page} />
+			<div className="registration">
+				<ProgressBar bsStyle="warning" now={25 * page} />
 				{page === 1 && (
 					<EventDetails
 						handleSubmit={this.nextPage}
@@ -71,18 +71,11 @@ export class YouthRegistration extends React.Component {
 				)}
 				{page === 3 && (
 					<ChurchInformation
-						handleSubmit={this.nextPage}
-						handleBack={this.previousPage}
-					/>
-				)}
-				{page === 4 && (
-					<Payment
-						values={values}
 						handleSubmit={this.handleSubmit}
 						handleBack={this.previousPage}
 					/>
 				)}
-				{page === 5 && <Thanks />}
+				{page === 4 && <Thanks />}
 			</div>
 		);
 	}

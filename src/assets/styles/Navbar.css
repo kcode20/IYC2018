@@ -3,4 +3,7 @@
   padding-top: 0px; }
 
 nav.navbar.navbar-inverse {
-  margin-bottom: 0px; }
+  margin-bottom: 0px;
+  border-bottom: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: none; }

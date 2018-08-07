@@ -140,59 +140,6 @@ const ChurchInformation = ({
 								/>
 							</div>
 						</div>
-						<div>
-							<ControlLabel>
-								Do You Want to Request Transportation?
-							</ControlLabel>
-							<div className="form-input">
-								<Field
-									name="request transportation?"
-									component="input"
-									type="radio"
-									value="Yes"
-								/>{' '}
-								Yes{' '}
-								<Field
-									name="request transportation?"
-									component="input"
-									type="radio"
-									value="No"
-								/>{' '}
-								No
-							</div>
-						</div>
-						{arrivalDepartureRequired && (
-							<div>
-								<ControlLabel>Arrival Information</ControlLabel>
-								<HelpBlock>
-									Include Airline/TrainName, Flight/Train #, and Arrival Time.
-								</HelpBlock>
-								<Field
-									name="arrival"
-									placeholder={`Airline/TrainName:\nFlight/Train #:\nArrival Time:\n`}
-									className="form-control"
-									component={FormControl}
-									componentClass="textarea"
-									rows="4"
-								/>
-							</div>
-						)}
-						{arrivalDepartureRequired && (
-							<div>
-								<ControlLabel>Departure Information</ControlLabel>
-								<HelpBlock>
-									Include Airline/TrainName, Flight/Train #, and Arrival Time.
-								</HelpBlock>
-								<Field
-									name="departure"
-									placeholder={`Airline/TrainName:\nFlight/Train #:\nArrival Time:\n`}
-									className="form-control"
-									component={FormControl}
-									componentClass="textarea"
-									rows="4"
-								/>
-							</div>
-						)}
 					</div>
 					<Col md={6}>
 						<Button type="button" className="previous" onClick={handleBack}>

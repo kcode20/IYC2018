@@ -19,6 +19,14 @@ const Navigation = ({ history }) => (
 				<NavItem eventKey={1} onClick={() => history.push('/register')}>
 					Register
 				</NavItem>
+				<Navbar.Text>
+					<Navbar.Link
+						href="https://goo.gl/forms/zBaTqW33s9duF8Fs1"
+						target="_blank"
+					>
+						Request Transportation
+					</Navbar.Link>
+				</Navbar.Text>
 			</Nav>
 		</Navbar.Collapse>
 	</Navbar>

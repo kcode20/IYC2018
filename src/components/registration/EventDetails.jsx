@@ -10,12 +10,9 @@ const EventDetails = ({ handleSubmit }) => (
 					<h3 className="chunk">Event Details</h3>
 					<p>Friend-</p>
 					<p>
-						Welcome back! I’ve been praying for you. You’re about to take the
-						first step into what will be the best week – EVER! Are you excited?
-						Every facilitator, keynote speaker, spoken word, note of music has
-						all been orchestrated to help you get FIT: For the Master’s Use!
-						“Come join us and we will do thee good, for the Lord has spoken good
-						things concerning YOU!” I’ll meet see you in New York!
+						Giddy UP and register for the 2019 Youth Leader’s Summit! All roads
+						lead to BBQ, rodeos, and IYC planning. (If you require airport pick
+						up/drop off please be prepared to submit that information)
 					</p>
 					<p>-Xavius President & Executive Chairman</p>
 				</div>

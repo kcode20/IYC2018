@@ -62,24 +62,27 @@ const Home = () => {
 				</Carousel>
 			</div>
 			<div className="about">
-				<h3> It’s LIT! </h3>
-				<p> Friend- </p>
 				<p>
-					Welcome to the virtual home of the International Youth Conference! For
-					decades this conference has served a pillar of support to youth in our
-					district and around the world, with special interest in the
-					development and growth of young leaders in the church! As we continue
-					our progression forward we thank God that he has given us the wisdom,
-					knowledge, and power to convene in-person and now, we can reach homes
-					anywhere. Yes, ANYWHERE! Through this website we hope to set each and
-					every youth leader and young person on FIRE! It is my prayer that the
-					information on these sites will become the very resources you need to
-					help you fulfill the “good work” in which you have been anointed for.
-					If there is anything we can do – to aid, assist, or even help pray for
-					we stand ready!
+					“The strength of youth we lay, at Jesus feet today – tis loyalty,
+					loyalty, loyalty to Christ; his gospel we’ll proclaim throughout the
+					world’s domain of loyalty, loyalty, loyalty to Christ!”
 				</p>
-				<p>Patiently awaiting his return,</p>
-				<p>Min. Xavius “Robbie” Robinson</p>
+				<p>
+					Words to walk, talk, and live by – this is the heart of who we are as
+					defined by our anthem. We are so excited about the wonderful things
+					God is doing in the hearts and souls of this generation. We remain
+					confident that the same God who parted the Red Sea is the same God who
+					will continue to perform unforeseen miracles in our hearts and minds.
+					I trust God for great things and I know that he will not fail us.
+				</p>
+				<p>
+					As we press on in Christ, our hope is that through this day and age of
+					social media and technology we will be able to whole heartedly reach
+					the next generation for Christ. Join us in this great journey as we
+					press on with our loyalty to Christ!
+				</p>
+				<p>In the Harvest of Souls,</p>
+				<p>Xavius “Robbie” Robinson</p>
 				<p>President & Executive Chairman</p>
 			</div>
 		</div>

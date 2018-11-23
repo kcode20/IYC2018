@@ -21,10 +21,10 @@ const Navigation = ({ history }) => (
 				</NavItem>
 				<Navbar.Text>
 					<Navbar.Link
-						href="https://goo.gl/forms/zBaTqW33s9duF8Fs1"
+						href="https://goo.gl/forms/8VkbZtL0Qy5zfB1r2"
 						target="_blank"
 					>
-						Request Transportation
+						Submit Suggestions
 					</Navbar.Link>
 				</Navbar.Text>
 			</Nav>

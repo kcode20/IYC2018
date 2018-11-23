@@ -9,6 +9,7 @@ import PersonalInformation from './registration/PersonalInformation';
 import ChurchInformation from './registration/ChurchInformation';
 import Payment from './registration/payment/Payment';
 import Thanks from './registration/Thanks';
+import Transportation from './registration/Transportation';
 
 /* Registration Form for the Youth Leaders Summit 2018 
 Todo: Find default for the branchname
@@ -28,7 +29,7 @@ export class YouthRegistration extends React.Component {
 		const { form } = this.props;
 		const values = form['YouthSummitRegistration'].values;
 		const google_script =
-			'https://script.google.com/macros/s/AKfycbx4TzdY7U6F9_E0MJCnZ_7EegtELvaGoQZ3gwPToHSuTYNjS65q/exec';
+			'https://script.google.com/macros/s/AKfycbwOkjWu0gj2RHYgKjwH6cG8RDnDCQufOx278nncI18YqxWHACc/exec';
 
 		axios
 			.get(google_script, { params: values })
@@ -56,7 +57,7 @@ export class YouthRegistration extends React.Component {
 			.values;
 		return (
 			<div className="registration">
-				<ProgressBar bsStyle="warning" now={25 * page} />
+				<ProgressBar bsStyle="warning" now={20 * page} />
 				{page === 1 && (
 					<EventDetails
 						handleSubmit={this.nextPage}
@@ -70,19 +71,26 @@ export class YouthRegistration extends React.Component {
 					/>
 				)}
 				{page === 3 && (
+					<Transportation
+						handleSubmit={this.nextPage}
+						handleBack={this.previousPage}
+					/>
+				)}
+				{page === 4 && (
 					<ChurchInformation
 						handleSubmit={this.handleSubmit}
 						handleBack={this.previousPage}
 					/>
 				)}
-				{page === 4 && <Thanks />}
+				{page === 5 && <Thanks />}
 			</div>
 		);
 	}
 }
 
-const connectedForm = connect(({ form }) => ({ form }), null)(
-	YouthRegistration
-);
+const connectedForm = connect(
+	({ form }) => ({ form }),
+	null
+)(YouthRegistration);
 
 export default reduxForm({ form: 'YouthLeaderRegistration' })(connectedForm);

@@ -1,14 +1,14 @@
 // @flow
 import React from 'react';
 import { Button, Carousel } from 'react-bootstrap';
-import Countdown from './Countdown';
+// import Countdown from './Countdown';
 import { Link } from 'react-router-dom';
 
 import HomePhoto from '../assets/images/iyc2.png';
 import NYCAerial from '../assets/images/NYC-Aerial.jpg';
 
 const Home = () => {
-	const deadline = new Date('August 26, 2018 8:00:00');
+	// const deadline = new Date('August 26, 2018 8:00:00');
 	return (
 		<div className="home">
 			<div>

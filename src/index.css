@@ -6,15 +6,22 @@ body {
   padding: 0;
   font-family: 'Kavivanar', cursive; }
 
-.navbar-brand {
-  padding-bottom: 0px;
-  padding-top: 0px; }
+a.navbar-brand {
+  padding: 0px; }
+
+.navbar-text {
+  padding: 15px;
+  margin: 0px; }
 
 nav.navbar.navbar-inverse {
   margin-bottom: 0px;
   border-bottom: none;
   background-color: rgba(0, 0, 0, 0.5);
   background-image: none; }
+
+@media only screen and (max-width: 600px) {
+  nav.navbar.navbar-inverse {
+    background-color: black; } }
 
 .home {
   background-color: black;
@@ -56,6 +63,14 @@ nav.navbar.navbar-inverse {
     padding: 16px;
     background-color: white;
     color: black; }
+  .home .testi-avatar {
+    background: #fff none repeat scroll 0 0;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    height: 90px;
+    display: inline-block !important;
+    padding: 2px;
+    width: 90px; }
   @media only screen and (max-width: 600px) {
     .home .header {
       width: 100%; }
@@ -83,3 +98,29 @@ nav.navbar.navbar-inverse {
 
 .registration {
   margin-top: 50px; }
+  .registration input.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    margin: 20px 0px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #fff;
+    background-color: #555;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
+  .registration .form-buttons {
+    margin: 20px 0px;
+    padding: 0px; }
+  .registration input.form-control:focus {
+    border-color: #ff871c;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }

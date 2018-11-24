@@ -196,14 +196,14 @@ const ChurchInformation = ({
 						</div>
 						*/}
 					</div>
-					<Col md={6}>
+					<Col md={6} className="form-buttons">
 						<Button type="button" className="previous" onClick={handleBack}>
 							Previous
 						</Button>
 					</Col>
-					<Col md={6}>
+					<Col md={6} className="form-buttons">
 						<Button bsStyle="primary" type="submit" className="next">
-							Finish
+							Next
 						</Button>
 					</Col>
 				</Col>

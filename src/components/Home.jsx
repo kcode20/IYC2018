@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 import HomePhoto from '../assets/images/iyc2.png';
 import NYCAerial from '../assets/images/NYC-Aerial.jpg';
+import Xavius from '../assets/images/Xavius.png';
 
 const Home = () => {
 	// const deadline = new Date('August 26, 2018 8:00:00');
@@ -28,12 +29,9 @@ const Home = () => {
 						<div className="header">
 							<Carousel.Caption>
 								<div className="head">
-									<h3> August 26th - September 2nd </h3>
-									<h1> International Youth Conference 2018</h1>
-									<p>
-										Apostolic Faith Church, 265 Lafayette Ave, Brooklyn, NY
-										11216
-									</p>
+									<h3> February 15th - 17th, 2019 </h3>
+									<h1> International Youth Conference Summit 2019</h1>
+									<p>Houston, TX</p>
 								</div>
 								<Link to="/register">
 									<Button bsStyle="warning" className="head-button">
@@ -43,7 +41,7 @@ const Home = () => {
 							</Carousel.Caption>
 						</div>
 					</Carousel.Item>
-					<Carousel.Item>
+					{/*<Carousel.Item>
 						<img width={900} height={500} alt="900x500" src={NYCAerial} />
 						<Carousel.Caption>
 							<h3>Second slide label</h3>
@@ -58,7 +56,7 @@ const Home = () => {
 								Praesent commodo cursus magna, vel scelerisque nisl consectetur.
 							</p>
 						</Carousel.Caption>
-					</Carousel.Item>
+					</Carousel.Item>*/}
 				</Carousel>
 			</div>
 			<div className="about">
@@ -82,8 +80,9 @@ const Home = () => {
 					press on with our loyalty to Christ!
 				</p>
 				<p>In the Harvest of Souls,</p>
-				<p>Xavius “Robbie” Robinson</p>
-				<p>President & Executive Chairman</p>
+				<p className="testi-name">Xavius “Robbie” Robinson</p>
+				<p className="testi-company">President & Executive Chairman</p>
+				{/*<img className="testi-avatar" src={Xavius} alt="testimonial img" />*/}
 			</div>
 		</div>
 	);

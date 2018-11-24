@@ -38,6 +38,14 @@
     padding: 16px;
     background-color: white;
     color: black; }
+  .home .testi-avatar {
+    background: #fff none repeat scroll 0 0;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    height: 90px;
+    display: inline-block !important;
+    padding: 2px;
+    width: 90px; }
   @media only screen and (max-width: 600px) {
     .home .header {
       width: 100%; }

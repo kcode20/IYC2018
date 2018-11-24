@@ -10,6 +10,8 @@ import ChurchInformation from './registration/ChurchInformation';
 import Payment from './registration/payment/Payment';
 import Thanks from './registration/Thanks';
 import Transportation from './registration/Transportation';
+import IYC2018 from './registration/IYC2018';
+import Submission from './registration/Submission';
 
 /* Registration Form for the Youth Leaders Summit 2018 
 Todo: Find default for the branchname
@@ -57,7 +59,7 @@ export class YouthRegistration extends React.Component {
 			.values;
 		return (
 			<div className="registration">
-				<ProgressBar bsStyle="warning" now={20 * page} />
+				<ProgressBar bsStyle="warning" now={14.285 * page} />
 				{page === 1 && (
 					<EventDetails
 						handleSubmit={this.nextPage}
@@ -78,11 +80,29 @@ export class YouthRegistration extends React.Component {
 				)}
 				{page === 4 && (
 					<ChurchInformation
-						handleSubmit={this.handleSubmit}
+						handleSubmit={this.nextPage}
 						handleBack={this.previousPage}
 					/>
 				)}
-				{page === 5 && <Thanks />}
+				{page === 5 && (
+					<IYC2018
+						handleSubmit={this.nextPage}
+						handleBack={this.previousPage}
+					/>
+				)}
+				{page === 6 && (
+					<Payment
+						handleSubmit={this.nextPage}
+						handleBack={this.previousPage}
+					/>
+				)}
+				{/*page === 7 && (
+					<Submission
+						handleSubmit={this.handleSubmit}
+						handleBack={this.previousPage}
+					/>
+				)*/}
+				{page === 7 && <Thanks />}
 			</div>
 		);
 	}

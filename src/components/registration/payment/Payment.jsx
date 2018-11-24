@@ -13,8 +13,8 @@ const CLIENT = {
 	production: paypalProductionKey,
 };
 
-const ENV = 'production';
-const REGISTRATION_PRICE = 25.0;
+const ENV = 'sandbox';
+const REGISTRATION_PRICE = 25;
 type Props = {
 	brunchAddon: string,
 	shirtAddon: string,
@@ -40,10 +40,9 @@ export class Payment extends React.Component<Props, State> {
 			this.setState({
 				issue: { exists: true, reason: 'canceled' },
 			});
-		let brunchPrice = brunchAddon === 'Yes' ? 20 : 0;
-		let shirtPrice = shirtAddon === 'Yes' ? 15 : 0;
-		let total = REGISTRATION_PRICE + brunchPrice + shirtPrice;
-		console.log(total);
+		// let brunchPrice = brunchAddon === 'Yes' ? 20 : 0;
+		// let shirtPrice = shirtAddon === 'Yes' ? 15 : 0;
+		// let total = REGISTRATION_PRICE + brunchPrice + shirtPrice;
 		return (
 			<form onSubmit={handleSubmit}>
 				<Grid>
@@ -71,6 +70,7 @@ export class Payment extends React.Component<Props, State> {
 									your registration.
 								</div>
 							)}
+							{/*
 							<div>
 								<ControlLabel>
 									Would you like to purchase tickets to the State of the
@@ -94,7 +94,7 @@ export class Payment extends React.Component<Props, State> {
 									No
 								</div>
 							</div>
-							<div>
+								<div>
 								<ControlLabel>
 									Would you like to add the official IYC shirt (available for
 									pickup at IYC)? $15
@@ -116,6 +116,7 @@ export class Payment extends React.Component<Props, State> {
 									No
 								</div>
 							</div>
+							*/}
 							<Col md={6}>
 								{!this.state.complete && (
 									<Button
@@ -135,7 +136,7 @@ export class Payment extends React.Component<Props, State> {
 										align="right"
 										className="next"
 									>
-										Submit
+										Next
 									</Button>
 								) : (
 									<PayPalButton
@@ -143,7 +144,7 @@ export class Payment extends React.Component<Props, State> {
 										env={ENV}
 										commit={true}
 										currency={'USD'}
-										total={total}
+										total={REGISTRATION_PRICE}
 										onSuccess={onSuccess}
 										onError={onError}
 										onCancel={onCancel}

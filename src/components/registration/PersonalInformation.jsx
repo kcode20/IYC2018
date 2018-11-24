@@ -27,6 +27,7 @@ const PersonalInformation = ({ handleSubmit, handleBack }) => (
 							className="form-control"
 							component="input"
 							type="text"
+							required
 						/>
 					</div>
 					<div>
@@ -37,6 +38,7 @@ const PersonalInformation = ({ handleSubmit, handleBack }) => (
 							className="form-control"
 							component="input"
 							type="text"
+							required
 						/>
 					</div>
 					<div>
@@ -47,6 +49,7 @@ const PersonalInformation = ({ handleSubmit, handleBack }) => (
 							className="form-control"
 							component="input"
 							type="text"
+							required
 						/>
 					</div>
 					{/* 
@@ -147,12 +150,12 @@ const PersonalInformation = ({ handleSubmit, handleBack }) => (
 					</div>
 					*/}
 				</div>
-				<Col md={6}>
+				<Col md={6} className="form-buttons">
 					<Button type="button" className="previous" onClick={handleBack}>
 						Previous
 					</Button>
 				</Col>
-				<Col md={6}>
+				<Col md={6} className="form-buttons">
 					<Button bsStyle="primary" type="submit" className="next">
 						Next
 					</Button>

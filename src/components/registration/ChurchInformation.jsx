@@ -177,7 +177,7 @@ const ChurchInformation = ({
 							</ControlLabel>
 							<Field
 								name="weaknesses"
-								placeholder="commitment, passion, and support"
+								placeholder="creativity, unity, and participation from the youth"
 								className="form-control"
 								component="input"
 								type="text"

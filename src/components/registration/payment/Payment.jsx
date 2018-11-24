@@ -13,7 +13,7 @@ const CLIENT = {
 	production: paypalProductionKey,
 };
 
-const ENV = 'sandbox';
+const ENV = 'production';
 const REGISTRATION_PRICE = 25;
 type Props = {
 	brunchAddon: string,
@@ -70,6 +70,15 @@ export class Payment extends React.Component<Props, State> {
 									your registration.
 								</div>
 							)}
+							<p>
+								To finish registration, you will be directed to PayPal to submit
+								a registration fee of $25. If you do not have a PayPal account,
+								you can click the 'Pay with Debit or Credit Card' Option.
+							</p>
+							<p>
+								Once you are completed with the payment, press submit to finish
+								the registration process.
+							</p>
 							{/*
 							<div>
 								<ControlLabel>
@@ -116,7 +125,6 @@ export class Payment extends React.Component<Props, State> {
 									No
 								</div>
 							</div>
-							*/}
 							<Col md={6}>
 								{!this.state.complete && (
 									<Button
@@ -127,7 +135,7 @@ export class Payment extends React.Component<Props, State> {
 										Previous
 									</Button>
 								)}
-							</Col>
+							</Col>*/}
 							<Col md={6}>
 								{this.state.complete ? (
 									<Button
@@ -136,7 +144,7 @@ export class Payment extends React.Component<Props, State> {
 										align="right"
 										className="next"
 									>
-										Next
+										Submit
 									</Button>
 								) : (
 									<PayPalButton

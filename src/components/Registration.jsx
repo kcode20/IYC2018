@@ -92,7 +92,7 @@ export class YouthRegistration extends React.Component {
 				)}
 				{page === 6 && (
 					<Payment
-						handleSubmit={this.nextPage}
+						handleSubmit={this.handleSubmit}
 						handleBack={this.previousPage}
 					/>
 				)}

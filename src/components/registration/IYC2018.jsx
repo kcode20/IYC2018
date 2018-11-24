@@ -22,7 +22,7 @@ const IYC2018 = ({ handleSubmit, handleBack, attendance }) => {
 									type="radio"
 									value="yes"
 								/>{' '}
-								Yes
+								Yes{' '}
 								<Field
 									name="attended_IYC2018?"
 									component="input"

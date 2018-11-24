@@ -66,7 +66,7 @@ const ChurchInformation = ({ handleSubmit, handleBack, transportation }) => {
 									/>
 								</div>
 								<div>
-									<ControlLabel>Departur</ControlLabel>
+									<ControlLabel>Departure</ControlLabel>
 									<Field
 										name="departure"
 										placeholder="Insert Date and Time"

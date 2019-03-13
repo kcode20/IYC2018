@@ -7,6 +7,7 @@ import store from './store';
 import Home from './components/Home';
 import Navigation from './components/Navigation';
 import Registration from './components/Registration';
+import Checklist from './components/Checklist';
 
 type Props = {};
 type State = {};
@@ -20,6 +21,7 @@ class App extends Component<Props, State> {
 						<Navigation />
 						<Route exact path="/" component={Home} />
 						<Route path="/register" component={Registration} />
+						<Route path="/checklist" component={Checklist} />
 					</div>
 				</Router>
 			</Provider>

@@ -2,6 +2,10 @@
   background-color: black;
   color: white;
   margin-top: 0px; }
+  .home .carousel-inner .item.active img {
+    min-height: 100vh;
+    width: 100%;
+    margin: auto; }
   .home .intro {
     height: 100vh; }
   .home .cover {
@@ -15,20 +19,14 @@
     opacity: 0.7;
     width: 100%;
     height: 100vh; }
-  .home .header {
-    position: relative;
-    text-align: center;
-    top: -60%;
-    width: 65%;
-    margin: auto; }
-    .home .header .head {
-      border-bottom: 15px solid white;
-      border-top: 15px solid white;
-      margin-bottom: 15px; }
-    .home .header .head-button {
-      background-color: #242424;
-      background-image: none;
-      border: none; }
+  .home .header .head {
+    border-bottom: 15px solid white;
+    border-top: 15px solid white;
+    margin-bottom: 15px; }
+  .home .header .head-button {
+    background-color: #242424;
+    background-image: none;
+    border: none; }
   .home .countdown {
     background-color: #242424;
     padding: 10px; }
@@ -40,6 +38,14 @@
     padding: 16px;
     background-color: white;
     color: black; }
+  .home .testi-avatar {
+    background: #fff none repeat scroll 0 0;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    height: 90px;
+    display: inline-block !important;
+    padding: 2px;
+    width: 90px; }
   @media only screen and (max-width: 600px) {
     .home .header {
       width: 100%; }

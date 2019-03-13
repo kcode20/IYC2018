@@ -14,7 +14,7 @@ const CLIENT = {
 };
 
 const ENV = 'production';
-const REGISTRATION_PRICE = 25.0;
+const REGISTRATION_PRICE = 25;
 type Props = {
 	brunchAddon: string,
 	shirtAddon: string,
@@ -40,10 +40,9 @@ export class Payment extends React.Component<Props, State> {
 			this.setState({
 				issue: { exists: true, reason: 'canceled' },
 			});
-		let brunchPrice = brunchAddon === 'Yes' ? 20 : 0;
-		let shirtPrice = shirtAddon === 'Yes' ? 15 : 0;
-		let total = REGISTRATION_PRICE + brunchPrice + shirtPrice;
-		console.log(total);
+		// let brunchPrice = brunchAddon === 'Yes' ? 20 : 0;
+		// let shirtPrice = shirtAddon === 'Yes' ? 15 : 0;
+		// let total = REGISTRATION_PRICE + brunchPrice + shirtPrice;
 		return (
 			<form onSubmit={handleSubmit}>
 				<Grid>
@@ -71,6 +70,16 @@ export class Payment extends React.Component<Props, State> {
 									your registration.
 								</div>
 							)}
+							<p>
+								To finish registration, you will be directed to PayPal to submit
+								a registration fee of $25. If you do not have a PayPal account,
+								you can click the 'Pay with Debit or Credit Card' Option.
+							</p>
+							<p>
+								Once you are completed with the payment, press submit to finish
+								the registration process.
+							</p>
+							{/*
 							<div>
 								<ControlLabel>
 									Would you like to purchase tickets to the State of the
@@ -94,7 +103,7 @@ export class Payment extends React.Component<Props, State> {
 									No
 								</div>
 							</div>
-							<div>
+								<div>
 								<ControlLabel>
 									Would you like to add the official IYC shirt (available for
 									pickup at IYC)? $15
@@ -126,7 +135,7 @@ export class Payment extends React.Component<Props, State> {
 										Previous
 									</Button>
 								)}
-							</Col>
+							</Col>*/}
 							<Col md={6}>
 								{this.state.complete ? (
 									<Button
@@ -143,7 +152,7 @@ export class Payment extends React.Component<Props, State> {
 										env={ENV}
 										commit={true}
 										currency={'USD'}
-										total={total}
+										total={REGISTRATION_PRICE}
 										onSuccess={onSuccess}
 										onError={onError}
 										onCancel={onCancel}

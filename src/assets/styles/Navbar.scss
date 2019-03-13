@@ -1,6 +1,10 @@
-.navbar-brand {
-	padding-bottom: 0px;
-	padding-top: 0px;
+a.navbar-brand {
+	padding: 0px;
+}
+
+.navbar-text {
+	padding: 15px;
+	margin: 0px;
 }
 
 nav.navbar.navbar-inverse {
@@ -8,4 +12,10 @@ nav.navbar.navbar-inverse {
 	border-bottom: none;
 	background-color: rgba(0, 0, 0, 0.5);
 	background-image: none;
+}
+
+@media only screen and (max-width: 600px) {
+	nav.navbar.navbar-inverse {
+		background-color: rgb(0, 0, 0);
+	}
 }

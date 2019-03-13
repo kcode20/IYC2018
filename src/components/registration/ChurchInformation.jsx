@@ -1,69 +1,62 @@
 import React from 'react';
 import { Field, reduxForm, formValueSelector } from 'redux-form';
 import { connect } from 'react-redux';
-import {
-	Grid,
-	Col,
-	ControlLabel,
-	Button,
-	FormControl,
-	HelpBlock,
-} from 'react-bootstrap';
-import CheckboxGroup from './CheckboxGroup';
+import { Grid, Col, ControlLabel, Button } from 'react-bootstrap';
+// import CheckboxGroup from './CheckboxGroup';
 
 const selector = formValueSelector('YouthSummitRegistration');
-const options = [
-	{
-		label: 'Pastor',
-		value: 'Pastor',
-	},
-	{
-		label: 'Minister',
-		value: 'Minister',
-	},
-	{
-		label: 'Musician',
-		value: 'Musician',
-	},
-	{
-		label: 'Choir Director',
-		value: 'Choir Director',
-	},
-	{
-		label: 'Choir Member',
-		value: 'Choir Member',
-	},
-	{
-		label: 'Sunday School Superintendent',
-		value: 'Sunday School Superintendent',
-	},
-	{
-		label: 'Sunday School Teacher',
-		value: 'Sunday School Teacher',
-	},
-	{
-		label: 'Usher',
-		value: 'Usher',
-	},
-	{
-		label: 'Youth Leader',
-		value: 'Youth Leader',
-	},
-	{
-		label: 'Church Volunteer',
-		value: 'Church Volunteer',
-	},
-	{
-		label: 'Not Working in My Local Church',
-		value: 'Not Working in My Local Church',
-	},
-	{
-		label:
-			'Don’t Work in an auxiliary at my church, BUT I would love to start ',
-		value:
-			'Don’t Work in an auxiliary at my church, BUT I would love to start ',
-	},
-];
+// const options = [
+// 	{
+// 		label: 'Pastor',
+// 		value: 'Pastor',
+// 	},
+// 	{
+// 		label: 'Minister',
+// 		value: 'Minister',
+// 	},
+// 	{
+// 		label: 'Musician',
+// 		value: 'Musician',
+// 	},
+// 	{
+// 		label: 'Choir Director',
+// 		value: 'Choir Director',
+// 	},
+// 	{
+// 		label: 'Choir Member',
+// 		value: 'Choir Member',
+// 	},
+// 	{
+// 		label: 'Sunday School Superintendent',
+// 		value: 'Sunday School Superintendent',
+// 	},
+// 	{
+// 		label: 'Sunday School Teacher',
+// 		value: 'Sunday School Teacher',
+// 	},
+// 	{
+// 		label: 'Usher',
+// 		value: 'Usher',
+// 	},
+// 	{
+// 		label: 'Youth Leader',
+// 		value: 'Youth Leader',
+// 	},
+// 	{
+// 		label: 'Church Volunteer',
+// 		value: 'Church Volunteer',
+// 	},
+// 	{
+// 		label: 'Not Working in My Local Church',
+// 		value: 'Not Working in My Local Church',
+// 	},
+// 	{
+// 		label:
+// 			'Don’t Work in an auxiliary at my church, BUT I would love to start ',
+// 		value:
+// 			'Don’t Work in an auxiliary at my church, BUT I would love to start ',
+// 	},
+// ];
 
 const ChurchInformation = ({
 	handleSubmit,
@@ -72,7 +65,7 @@ const ChurchInformation = ({
 	transportation,
 }) => {
 	const youthLeaderNameRequired = youthLeader === 'No';
-	const arrivalDepartureRequired = transportation === 'Yes';
+	// const arrivalDepartureRequired = transportation === 'Yes';
 	return (
 		<form onSubmit={handleSubmit}>
 			<Grid>
@@ -83,7 +76,7 @@ const ChurchInformation = ({
 							<ControlLabel>Church Name</ControlLabel>
 							<Field
 								name="church"
-								placeholder="Branch 2"
+								placeholder="Branch Name"
 								className="form-control"
 								component="input"
 								type="text"
@@ -100,30 +93,44 @@ const ChurchInformation = ({
 							/>
 						</div>
 						<div>
-							<ControlLabel>Are You A Youth Leader?</ControlLabel>
+							<ControlLabel>
+								Are You A Youth Leader or Youth Worker?
+							</ControlLabel>
 							<div className="form-input">
 								<Field
-									name="youth leader?"
+									name="youth_leader?"
 									component="input"
 									type="radio"
-									value="Yes"
+									value="Youth Leader"
 								/>{' '}
-								Yes{' '}
+								Youth Leader{' '}
 								<Field
-									name="youth leader?"
+									name="youth_leader?"
 									component="input"
 									type="radio"
-									value="No"
+									value="Youth Worker"
 								/>{' '}
-								No
+								Youth Worker
 							</div>
+						</div>
+						<div>
+							<ControlLabel>How long have you served?</ControlLabel>
+							<Field
+								name="service_time"
+								placeholder="2 years"
+								className="form-control"
+								component="input"
+								type="text"
+							/>
 						</div>
 						{youthLeaderNameRequired && (
 							<div>
-								<ControlLabel>Youth Leader's Name</ControlLabel>
+								<ControlLabel>
+									How long have you served as a youth leader?
+								</ControlLabel>
 								<Field
-									name="youth leader name"
-									placeholder="John Doe"
+									name="leader time served"
+									placeholder="2 years"
 									className="form-control"
 									component="input"
 									type="text"
@@ -131,6 +138,53 @@ const ChurchInformation = ({
 							</div>
 						)}
 						<div>
+							<ControlLabel>How many youth do you lead?</ControlLabel>
+							<Field
+								name="num_youth"
+								placeholder="30"
+								className="form-control"
+								component="input"
+								type="text"
+							/>
+						</div>
+						<div>
+							<ControlLabel>
+								What auxiliaries do you have (i.e. orchestra, choir, outreach)?
+							</ControlLabel>
+							<Field
+								name="auxilaries"
+								placeholder="orchestra, choir, and outreach"
+								className="form-control"
+								component="input"
+								type="text"
+							/>
+						</div>
+						<div>
+							<ControlLabel>
+								List three strengths you as a youth leader possess
+							</ControlLabel>
+							<Field
+								name="strengths"
+								placeholder="commitment, passion, and support"
+								className="form-control"
+								component="input"
+								type="text"
+							/>
+						</div>
+						<div>
+							<ControlLabel>
+								List three things you wish to improve upon as a youth leader
+							</ControlLabel>
+							<Field
+								name="weaknesses"
+								placeholder="creativity, unity, and participation from the youth"
+								className="form-control"
+								component="input"
+								type="text"
+							/>
+						</div>
+						{/*
+							<div>
 							<ControlLabel>In my home church I am...</ControlLabel>
 							<div className="form-input">
 								<Field
@@ -140,68 +194,16 @@ const ChurchInformation = ({
 								/>
 							</div>
 						</div>
-						<div>
-							<ControlLabel>
-								Do You Want to Request Transportation?
-							</ControlLabel>
-							<div className="form-input">
-								<Field
-									name="request transportation?"
-									component="input"
-									type="radio"
-									value="Yes"
-								/>{' '}
-								Yes{' '}
-								<Field
-									name="request transportation?"
-									component="input"
-									type="radio"
-									value="No"
-								/>{' '}
-								No
-							</div>
-						</div>
-						{arrivalDepartureRequired && (
-							<div>
-								<ControlLabel>Arrival Information</ControlLabel>
-								<HelpBlock>
-									Include Airline/TrainName, Flight/Train #, and Arrival Time.
-								</HelpBlock>
-								<Field
-									name="arrival"
-									placeholder={`Airline/TrainName:\nFlight/Train #:\nArrival Time:\n`}
-									className="form-control"
-									component={FormControl}
-									componentClass="textarea"
-									rows="4"
-								/>
-							</div>
-						)}
-						{arrivalDepartureRequired && (
-							<div>
-								<ControlLabel>Departure Information</ControlLabel>
-								<HelpBlock>
-									Include Airline/TrainName, Flight/Train #, and Arrival Time.
-								</HelpBlock>
-								<Field
-									name="departure"
-									placeholder={`Airline/TrainName:\nFlight/Train #:\nArrival Time:\n`}
-									className="form-control"
-									component={FormControl}
-									componentClass="textarea"
-									rows="4"
-								/>
-							</div>
-						)}
+						*/}
 					</div>
-					<Col md={6}>
+					<Col md={6} className="form-buttons">
 						<Button type="button" className="previous" onClick={handleBack}>
 							Previous
 						</Button>
 					</Col>
-					<Col md={6}>
+					<Col md={6} className="form-buttons">
 						<Button bsStyle="primary" type="submit" className="next">
-							Finish
+							Next
 						</Button>
 					</Col>
 				</Col>
@@ -212,7 +214,6 @@ const ChurchInformation = ({
 
 export default connect(state => ({
 	youthLeader: selector(state, 'youth leader?'),
-	transportation: selector(state, 'request transportation?'),
 }))(
 	reduxForm({
 		form: 'YouthSummitRegistration', // <------ same form name

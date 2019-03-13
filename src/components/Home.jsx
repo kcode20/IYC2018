@@ -1,65 +1,88 @@
 // @flow
 import React from 'react';
-import { Button } from 'react-bootstrap';
-import Countdown from './Countdown';
+import { Button, Carousel } from 'react-bootstrap';
+// import Countdown from './Countdown';
 import { Link } from 'react-router-dom';
 
 import HomePhoto from '../assets/images/iyc2.png';
 import NYCAerial from '../assets/images/NYC-Aerial.jpg';
+import Xavius from '../assets/images/Xavius.png';
 
 const Home = () => {
-	const deadline = new Date('August 26, 2018 8:00:00');
+	// const deadline = new Date('August 26, 2018 8:00:00');
 	return (
 		<div className="home">
-			<div className="cover">
-				<svg
-					className="triangle"
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 100 100"
-					preserveAspectRatio="none"
-				>
-					<polygon fill="gray" points="100,0 0,100 0,0" />
-					<polygon fill="orange" points="0,100 100,0 100,100" />
-				</svg>
-				<div className="header">
-					<div className="head">
-						<h3> August 26th - September 2nd </h3>
-						<h1> International Youth Conference 2018</h1>
-						<p>Apostolic Faith Church, 265 Lafayette Ave, Brooklyn, NY 11216</p>
-					</div>
-					<Link to="/register">
-						<Button bsStyle="warning" className="head-button">
-							Register Now!
-						</Button>
-					</Link>
-				</div>
-			</div>
-			<div className="countdown">
-				<div className="counter">
-					<h1> Countdown Until IYC 2018: </h1>
-					<Countdown endtime={deadline} />
-				</div>
+			<div>
+				<Carousel>
+					<Carousel.Item>
+						<div className="cover">
+							<svg
+								className="triangle"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 100 100"
+								preserveAspectRatio="none"
+							>
+								<polygon fill="gray" points="100,0 0,100 0,0" />
+								<polygon fill="orange" points="0,100 100,0 100,100" />
+							</svg>
+						</div>
+						<div className="header">
+							<Carousel.Caption>
+								<div className="head">
+									<h3> February 15th - 17th, 2019 </h3>
+									<h1> International Youth Conference Summit 2019</h1>
+									<p>Houston, TX</p>
+								</div>
+								<Link to="/register">
+									<Button bsStyle="warning" className="head-button">
+										Register Now!
+									</Button>
+								</Link>
+							</Carousel.Caption>
+						</div>
+					</Carousel.Item>
+					{/*<Carousel.Item>
+						<img width={900} height={500} alt="900x500" src={NYCAerial} />
+						<Carousel.Caption>
+							<h3>Second slide label</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						</Carousel.Caption>
+					</Carousel.Item>
+					<Carousel.Item>
+						<img width={900} height={500} alt="900x500" src={HomePhoto} />
+						<Carousel.Caption>
+							<h3>Third slide label</h3>
+							<p>
+								Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+							</p>
+						</Carousel.Caption>
+					</Carousel.Item>*/}
+				</Carousel>
 			</div>
 			<div className="about">
-				<h3> It’s LIT! </h3>
-				<p> Friend- </p>
 				<p>
-					Welcome to the virtual home of the International Youth Conference! For
-					decades this conference has served a pillar of support to youth in our
-					district and around the world, with special interest in the
-					development and growth of young leaders in the church! As we continue
-					our progression forward we thank God that he has given us the wisdom,
-					knowledge, and power to convene in-person and now, we can reach homes
-					anywhere. Yes, ANYWHERE! Through this website we hope to set each and
-					every youth leader and young person on FIRE! It is my prayer that the
-					information on these sites will become the very resources you need to
-					help you fulfill the “good work” in which you have been anointed for.
-					If there is anything we can do – to aid, assist, or even help pray for
-					we stand ready!
+					“The strength of youth we lay, at Jesus feet today – tis loyalty,
+					loyalty, loyalty to Christ; his gospel we’ll proclaim throughout the
+					world’s domain of loyalty, loyalty, loyalty to Christ!”
 				</p>
-				<p>Patiently awaiting his return,</p>
-				<p>Min. Xavius “Robbie” Robinson</p>
-				<p>President & Executive Chairman</p>
+				<p>
+					Words to walk, talk, and live by – this is the heart of who we are as
+					defined by our anthem. We are so excited about the wonderful things
+					God is doing in the hearts and souls of this generation. We remain
+					confident that the same God who parted the Red Sea is the same God who
+					will continue to perform unforeseen miracles in our hearts and minds.
+					I trust God for great things and I know that he will not fail us.
+				</p>
+				<p>
+					As we press on in Christ, our hope is that through this day and age of
+					social media and technology we will be able to whole heartedly reach
+					the next generation for Christ. Join us in this great journey as we
+					press on with our loyalty to Christ!
+				</p>
+				<p>In the Harvest of Souls,</p>
+				<p className="testi-name">Xavius “Robbie” Robinson</p>
+				<p className="testi-company">President & Executive Chairman</p>
+				{/*<img className="testi-avatar" src={Xavius} alt="testimonial img" />*/}
 			</div>
 		</div>
 	);

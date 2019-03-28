@@ -3,6 +3,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import logo from '../assets/images/iyc.png';
+import '../assets/styles/Navbar.css';
 
 const Navigation = ({ history }) => (
 	<Navbar inverse fixedTop collapseOnSelect>

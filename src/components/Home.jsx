@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import HomePhoto from '../assets/images/iyc2.png';
 import NYCAerial from '../assets/images/NYC-Aerial.jpg';
 import Xavius from '../assets/images/Xavius.png';
+import '../assets/styles/Home.css';
 
 const Home = () => {
 	// const deadline = new Date('August 26, 2018 8:00:00');

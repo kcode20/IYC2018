@@ -12,6 +12,7 @@ import Thanks from './registration/Thanks';
 import Transportation from './registration/Transportation';
 import IYC2018 from './registration/IYC2018';
 import Submission from './registration/Submission';
+import '../assets/styles/Registration.css';
 
 /* Registration Form for the Youth Leaders Summit 2018 
 Todo: Find default for the branchname

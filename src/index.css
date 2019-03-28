@@ -1,18 +1,21 @@
-@import url("https://fonts.googleapis.com/css?family=Kavivanar|Pridi");
+@import url('https://fonts.googleapis.com/css?family=Kavivanar|Pridi');
 body {
-  background-color: black;
-  color: white;
-  margin: 0;
-  padding: 0;
-  font-family: 'Kavivanar', cursive; }
+	background-color: black;
+	color: white;
+	margin: 0;
+	padding: 0;
+	font-family: 'Kavivanar', cursive;
+}
 
 .chunk {
-  margin-bottom: 16px; }
+	margin-bottom: 16px;
+}
 
-a.navbar-brand {
-  padding: 0px; }
+/* a.navbar-brand {
+	padding: 0px;
+} */
 
-.navbar-text {
+/* .navbar-text {
   padding: 15px;
   margin: 0px; }
 
@@ -119,4 +122,4 @@ nav.navbar.navbar-inverse {
   margin-top: 50px; }
   .checklist .iframepdf {
     width: 100%;
-    height: 100vh; }
+    height: 100vh; } */

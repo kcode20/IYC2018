@@ -3,28 +3,14 @@
 	color: white;
 	margin-top: 0px;
 }
-.home .carousel-inner .item.active img {
-	min-height: 100vh;
-	width: 100%;
-	margin: auto;
-}
+
 .home .intro {
 	height: 100vh;
 }
-.home .cover {
-	height: 100vh;
+.home .cover img {
 	width: 100%;
-	background: url(../images/Atlanta.jpg) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
 }
-.home .triangle {
-	opacity: 0.7;
-	width: 100%;
-	height: 100vh;
-}
+
 .home .header .head {
 	border-bottom: 15px solid white;
 	border-top: 15px solid white;
@@ -65,5 +51,9 @@
 	.home .countdown {
 		visibility: hidden;
 		height: 0px;
+	}
+
+	.home .cover img {
+		margin-top: 50px;
 	}
 }

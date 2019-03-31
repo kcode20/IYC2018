@@ -9,7 +9,7 @@ const ChurchInformation = ({ handleSubmit, handleBack, transportation }) => {
 	const transportationRequired = transportation === 'yes';
 	console.log(transportation, transportationRequired);
 	return (
-		<form onSubmit={handleSubmit}>
+		<form className="form-design" onSubmit={handleSubmit}>
 			<Grid>
 				<Col xs={12} md={8} className="column col-md-offset-2">
 					<div className="chunk">

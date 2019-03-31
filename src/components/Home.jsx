@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import Countdown from './Countdown';
 import { Link } from 'react-router-dom';
 
-import HomePhoto from '../assets/images/iyc2.png';
+import HomePhoto from '../assets/images/Atlanta.jpg';
 import Xavius from '../assets/images/Xavius.png';
 import '../assets/styles/Home.css';
 
@@ -13,7 +13,9 @@ const Home = () => {
 	return (
 		<div className="home">
 			<div>
-				<div className="cover" />
+				<div className="cover">
+					<img src={HomePhoto} />
+				</div>
 				<div className="header">
 					<div className="head">
 						<h3> August 15th - 17th, 2019 </h3>
@@ -27,7 +29,7 @@ const Home = () => {
 					</Link>
 				</div>
 			</div>
-			<Countdown endtime={deadline} />
+			<Countdown className="countdown" endtime={deadline} />
 			<div className="about">
 				<p>
 					“The strength of youth we lay, at Jesus feet today – tis loyalty,

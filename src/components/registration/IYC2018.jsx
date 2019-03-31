@@ -8,7 +8,7 @@ const selector = formValueSelector('YouthSummitRegistration');
 const IYC2018 = ({ handleSubmit, handleBack, attendance }) => {
 	const attendanceRequired = attendance === 'yes';
 	return (
-		<form onSubmit={handleSubmit}>
+		<form className="form-design" onSubmit={handleSubmit}>
 			<Grid>
 				<Col xs={12} md={8} className="column col-md-offset-2">
 					<div className="chunk">

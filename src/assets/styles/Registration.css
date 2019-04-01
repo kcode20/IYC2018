@@ -7,7 +7,9 @@
 	-o-background-size: cover;
 	background-size: cover;
 	min-height: 100vh;
-	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .registration .form-design {
 	background-color: white;
@@ -16,8 +18,10 @@
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	width: 75%;
 	color: black;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.registration .form-buttons {
+	padding-left: 0;
+	margin-bottom: 15px;
 }

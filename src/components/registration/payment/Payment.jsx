@@ -14,7 +14,7 @@ const CLIENT = {
 };
 
 const ENV = 'production';
-const REGISTRATION_PRICE = 25;
+const REGISTRATION_PRICE = 75;
 type Props = {
 	brunchAddon: string,
 	shirtAddon: string,
@@ -44,42 +44,39 @@ export class Payment extends React.Component<Props, State> {
 		// let shirtPrice = shirtAddon === 'Yes' ? 15 : 0;
 		// let total = REGISTRATION_PRICE + brunchPrice + shirtPrice;
 		return (
-			<form onSubmit={handleSubmit}>
-				<Grid>
-					<Col xs={12} md={8}>
-						<div>
-							{this.state.issue.exists &&
-							this.state.issue.reason === 'canceled' ? (
-								<div className="alert alert-danger" role="alert">
-									{' '}
-									Oops! It seems as if you canceled your payment. Please try
-									again.
-								</div>
-							) : this.state.issue.reason === 'error' ? (
-								<div className="alert alert-danger" role="alert">
-									{' '}
-									Oops! There was an error processing your payment. Please try
-									again.{' '}
-								</div>
-							) : (
-								''
-							)}
-							{this.state.complete && (
-								<div className="alert alert-success" role="alert">
-									Your payment was recieved! Please press submit to complete
-									your registration.
-								</div>
-							)}
-							<p>
-								To finish registration, you will be directed to PayPal to submit
-								a registration fee of $25. If you do not have a PayPal account,
-								you can click the 'Pay with Debit or Credit Card' Option.
-							</p>
-							<p>
-								Once you are completed with the payment, press submit to finish
-								the registration process.
-							</p>
-							{/*
+			<form className="form-design" onSubmit={handleSubmit}>
+				<h3> Payment </h3>
+				<div>
+					{this.state.issue.exists && this.state.issue.reason === 'canceled' ? (
+						<div className="alert alert-danger" role="alert">
+							{' '}
+							Oops! It seems as if you canceled your payment. Please try again.
+						</div>
+					) : this.state.issue.reason === 'error' ? (
+						<div className="alert alert-danger" role="alert">
+							{' '}
+							Oops! There was an error processing your payment. Please try
+							again.{' '}
+						</div>
+					) : (
+						''
+					)}
+					{this.state.complete && (
+						<div className="alert alert-success" role="alert">
+							Your payment was recieved! Please press submit to complete your
+							registration.
+						</div>
+					)}
+					<p>
+						To finish registration, you will be directed to PayPal to submit a
+						registration fee of $75. If you do not have a PayPal account, you
+						can click the 'Pay with Debit or Credit Card' Option.
+					</p>
+					<p>
+						Once you are completed with the payment, press next to finish the
+						registration process.
+					</p>
+					{/*
 							<div>
 								<ControlLabel>
 									Would you like to purchase tickets to the State of the
@@ -136,32 +133,28 @@ export class Payment extends React.Component<Props, State> {
 									</Button>
 								)}
 							</Col>*/}
-							<Col md={6}>
-								{this.state.complete ? (
-									<Button
-										bsStyle="primary"
-										type="submit"
-										align="right"
-										className="next"
-									>
-										Submit
-									</Button>
-								) : (
-									<PayPalButton
-										client={CLIENT}
-										env={ENV}
-										commit={true}
-										currency={'USD'}
-										total={REGISTRATION_PRICE}
-										onSuccess={onSuccess}
-										onError={onError}
-										onCancel={onCancel}
-									/>
-								)}
-							</Col>
-						</div>
-					</Col>
-				</Grid>
+					{this.state.complete ? (
+						<Button
+							bsStyle="primary"
+							type="submit"
+							align="right"
+							className="next"
+						>
+							Submit
+						</Button>
+					) : (
+						<PayPalButton
+							client={CLIENT}
+							env={ENV}
+							commit={true}
+							currency={'USD'}
+							total={REGISTRATION_PRICE}
+							onSuccess={onSuccess}
+							onError={onError}
+							onCancel={onCancel}
+						/>
+					)}
+				</div>
 			</form>
 		);
 	}

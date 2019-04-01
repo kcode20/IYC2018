@@ -23,6 +23,9 @@ const Navigation = ({ history }) => (
 				<NavItem eventKey={2} onClick={() => history.push('/checklist')}>
 					Checklist
 				</NavItem>
+				<NavItem eventKey={3} onClick={() => history.push('/gallery')}>
+					Gallery
+				</NavItem>
 			</Nav>
 		</Navbar.Collapse>
 	</Navbar>

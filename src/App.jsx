@@ -8,6 +8,7 @@ import Home from './components/Home';
 import Navigation from './components/Navigation';
 import Registration from './components/Registration';
 import Checklist from './components/Checklist';
+import Gallery from './components/Gallery';
 
 type Props = {};
 type State = {};
@@ -22,6 +23,7 @@ class App extends Component<Props, State> {
 						<Route exact path="/" component={Home} />
 						<Route path="/register" component={Registration} />
 						<Route path="/checklist" component={Checklist} />
+						<Route path="/gallery" component={Gallery} />
 					</div>
 				</Router>
 			</Provider>

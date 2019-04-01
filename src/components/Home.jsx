@@ -17,19 +17,19 @@ const Home = () => {
 					<img src={HomePhoto} />
 				</div>
 				<div className="header">
-					<div className="head">
-						<h3> August 15th - 17th, 2019 </h3>
+					<div className="head section">
+						<Countdown endtime={deadline} />
 						<h1> International Youth Conference 2019</h1>
+						<h3> August 28th - September 1st, 2019 </h3>
 						<p>Atlanta, GA</p>
+						<Link to="/register">
+							<Button bsStyle="warning" className="head-button">
+								Register Now!
+							</Button>
+						</Link>
 					</div>
-					<Link to="/register">
-						<Button bsStyle="warning" className="head-button">
-							Register Now!
-						</Button>
-					</Link>
 				</div>
 			</div>
-			<Countdown className="countdown" endtime={deadline} />
 			<div className="about">
 				<p>
 					“The strength of youth we lay, at Jesus feet today – tis loyalty,

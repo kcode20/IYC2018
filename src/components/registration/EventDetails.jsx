@@ -8,11 +8,13 @@ const EventDetails = ({ handleSubmit }) => (
 			<h3 className="chunk">Event Details</h3>
 			<p>Friend-</p>
 			<p>
-				Giddy UP and register for the 2019 Youth Leader’s Summit! All roads lead
-				to BBQ, rodeos, and IYC planning. (If you require airport pick up/drop
-				off please be prepared to submit that information)
+				Welcome to Atlanta! New Year, New Location, Same GOD! Aren’t you
+				excited? I’m looking forward to what’s in store at IYC this year. We’re
+				going “Back to the Basics,” let’s learn and grow together! (If you
+				require airport pick up/drop off please be prepared to submit that
+				information)
 			</p>
-			<p>-Xavius President & Executive Chairman</p>
+			<p>- Xavius President & Executive Chairman</p>
 		</div>
 		<Button bsStyle="primary" type="submit" className="next">
 			Next

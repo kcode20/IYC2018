@@ -1,29 +1,18 @@
 .home {
-	background-color: black;
 	color: white;
 	margin-top: 0px;
 }
-
 .home .intro {
 	height: 100vh;
 }
 .home .cover img {
 	width: 100%;
 }
-
 .home .header .head {
-	border-bottom: 15px solid white;
-	border-top: 15px solid white;
-	margin-bottom: 15px;
-}
-.home .header .head-button {
-	background-color: #242424;
-	background-image: none;
-	border: none;
-}
-.home .countdown {
-	background-color: #242424;
 	padding: 10px;
+	background-color: #333;
+	text-align: center;
+	/* font-family: 'Patrick Hand', cursive; */
 }
 .home .countdown .counter {
 	width: 75%;

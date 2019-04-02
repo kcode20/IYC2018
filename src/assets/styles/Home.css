@@ -2,6 +2,9 @@
 	color: white;
 	margin-top: 0px;
 }
+.section {
+	padding: 50px 30px;
+}
 .home .intro {
 	height: 100vh;
 }
@@ -9,7 +12,6 @@
 	width: 100%;
 }
 .home .header .head {
-	padding: 10px;
 	background-color: #333;
 	text-align: center;
 	/* font-family: 'Patrick Hand', cursive; */
@@ -20,7 +22,6 @@
 	text-align: center;
 }
 .home .about {
-	padding: 16px;
 	background-color: white;
 	color: black;
 }

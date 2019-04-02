@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm, formValueSelector } from 'redux-form';
 import { connect } from 'react-redux';
-import { Grid, Col, ControlLabel, Button } from 'react-bootstrap';
+import { ControlLabel, Button } from 'react-bootstrap';
 
 const selector = formValueSelector('YouthSummitRegistration');
 
@@ -76,16 +76,16 @@ const ChurchInformation = ({ handleSubmit, handleBack, transportation }) => {
 					</div>
 				)}
 			</div>
-			<Col md={6} className="form-buttons">
-				<Button type="button" className="previous" onClick={handleBack}>
-					Previous
-				</Button>
-			</Col>
-			<Col md={6} className="form-buttons">
-				<Button bsStyle="primary" type="submit" className="next">
-					Next
-				</Button>
-			</Col>
+			<Button
+				type="button"
+				className="previous form-buttons"
+				onClick={handleBack}
+			>
+				Previous
+			</Button>
+			<Button bsStyle="primary" type="submit" className="next form-buttons">
+				Next
+			</Button>
 		</form>
 	);
 };

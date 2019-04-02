@@ -30,7 +30,7 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			<div className="about">
+			<div className="about section">
 				<p>
 					“The strength of youth we lay, at Jesus feet today – tis loyalty,
 					loyalty, loyalty to Christ; his gospel we’ll proclaim throughout the

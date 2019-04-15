@@ -30,9 +30,13 @@ export class YouthRegistration extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		const { form } = this.props;
-		const values = form['YouthSummitRegistration'].values;
+		let values = form['YouthSummitRegistration'].values;
+		values = {
+			...values,
+			church_role: values.church_role.join(),
+		};
 		const google_script =
-			'https://script.google.com/macros/s/AKfycbwOkjWu0gj2RHYgKjwH6cG8RDnDCQufOx278nncI18YqxWHACc/exec';
+			'https://script.google.com/macros/s/AKfycbyq9k3YO8pillkstGOLSjWKZD-IZktdJpY-CeZzyChWCkLuwamr/exec';
 
 		axios
 			.get(google_script, { params: values })
@@ -60,7 +64,6 @@ export class YouthRegistration extends React.Component {
 			.values;
 		return (
 			<div className="registration">
-				<ProgressBar bsStyle="warning" now={14.285 * page} />
 				{page === 1 && (
 					<EventDetails
 						handleSubmit={this.nextPage}
@@ -86,24 +89,18 @@ export class YouthRegistration extends React.Component {
 					/>
 				)}
 				{page === 5 && (
-					<IYC2018
-						handleSubmit={this.nextPage}
-						handleBack={this.previousPage}
-					/>
-				)}
-				{page === 6 && (
 					<Payment
 						handleSubmit={this.handleSubmit}
 						handleBack={this.previousPage}
 					/>
 				)}
-				{/*page === 7 && (
+				{/*page === 6 && (
 					<Submission
 						handleSubmit={this.handleSubmit}
 						handleBack={this.previousPage}
 					/>
 				)*/}
-				{page === 7 && <Thanks />}
+				{page === 6 && <Thanks />}
 			</div>
 		);
 	}

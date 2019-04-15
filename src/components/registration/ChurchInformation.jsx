@@ -5,6 +5,7 @@ import { Grid, Col, ControlLabel, Button } from 'react-bootstrap';
 import CheckboxGroup from './CheckboxGroup';
 
 const selector = formValueSelector('YouthSummitRegistration');
+
 const options = [
 	{
 		label: 'Pastor',
@@ -65,7 +66,7 @@ const ChurchInformation = ({
 	transportation,
 }) => {
 	const youthLeaderNameRequired = youthLeader === 'No';
-	// const arrivalDepartureRequired = transportation === 'Yes';
+	console.log(youthLeaderNameRequired);
 	return (
 		<form className="form-design" onSubmit={handleSubmit}>
 			<div className="chunk">
@@ -91,42 +92,29 @@ const ChurchInformation = ({
 					/>
 				</div>
 				<div>
-					<ControlLabel>Are You A Youth Leader or Youth Worker?</ControlLabel>
+					<ControlLabel>Are You A Youth Leader</ControlLabel>
 					<div className="form-input">
 						<Field
 							name="youth_leader?"
 							component="input"
 							type="radio"
-							value="Youth Leader"
+							value="Yes"
 						/>{' '}
-						Youth Leader{' '}
+						Yes{' '}
 						<Field
 							name="youth_leader?"
 							component="input"
 							type="radio"
-							value="Youth Worker"
+							value="No"
 						/>{' '}
-						Youth Worker
+						No
 					</div>
-				</div>
-				<div>
-					<ControlLabel>How long have you served?</ControlLabel>
-					<Field
-						name="service_time"
-						placeholder="2 years"
-						className="form-control"
-						component="input"
-						type="text"
-					/>
 				</div>
 				{youthLeaderNameRequired && (
 					<div>
-						<ControlLabel>
-							How long have you served as a youth leader?
-						</ControlLabel>
+						<ControlLabel>Youth Leader's Name</ControlLabel>
 						<Field
-							name="leader time served"
-							placeholder="2 years"
+							name="leader_name"
 							className="form-control"
 							component="input"
 							type="text"
@@ -134,60 +122,24 @@ const ChurchInformation = ({
 					</div>
 				)}
 				<div>
-					<ControlLabel>How many youth do you lead?</ControlLabel>
-					<Field
-						name="num_youth"
-						placeholder="30"
-						className="form-control"
-						component="input"
-						type="text"
-					/>
-				</div>
-				<div>
-					<ControlLabel>
-						What auxiliaries do you have (i.e. orchestra, choir, outreach)?
-					</ControlLabel>
-					<Field
-						name="auxilaries"
-						placeholder="orchestra, choir, and outreach"
-						className="form-control"
-						component="input"
-						type="text"
-					/>
-				</div>
-				<div>
-					<ControlLabel>
-						List three strengths you as a youth leader possess
-					</ControlLabel>
-					<Field
-						name="strengths"
-						placeholder="commitment, passion, and support"
-						className="form-control"
-						component="input"
-						type="text"
-					/>
-				</div>
-				<div>
-					<ControlLabel>
-						List three things you wish to improve upon as a youth leader
-					</ControlLabel>
-					<Field
-						name="weaknesses"
-						placeholder="creativity, unity, and participation from the youth"
-						className="form-control"
-						component="input"
-						type="text"
-					/>
-				</div>
-				<div>
 					<ControlLabel>In my home church I am...</ControlLabel>
 					<div className="form-input">
 						<Field
-							name="home church role"
+							name="church_role"
 							component={CheckboxGroup}
 							options={options}
 						/>
 					</div>
+				</div>
+			</div>
+			<div>
+				<ControlLabel>
+					Can a team member of IYC contact you in-regrads to your group
+					providing on-site help?
+				</ControlLabel>
+				<div className="form-input">
+					<Field name="help?" component="input" type="radio" value="Yes" /> Yes{' '}
+					<Field name="help?" component="input" type="radio" value="No" /> No
 				</div>
 			</div>
 			<Col md={6} className="form-buttons">
@@ -205,7 +157,7 @@ const ChurchInformation = ({
 };
 
 export default connect(state => ({
-	youthLeader: selector(state, 'youth leader?'),
+	youthLeader: selector(state, 'youth_leader?'),
 }))(
 	reduxForm({
 		form: 'YouthSummitRegistration', // <------ same form name

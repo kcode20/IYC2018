@@ -13,7 +13,7 @@ const CLIENT = {
 	production: paypalProductionKey,
 };
 
-const ENV = 'production';
+const ENV = 'sandbox';
 const REGISTRATION_PRICE = 75;
 type Props = {
 	brunchAddon: string,
@@ -40,9 +40,10 @@ export class Payment extends React.Component<Props, State> {
 			this.setState({
 				issue: { exists: true, reason: 'canceled' },
 			});
-		// let brunchPrice = brunchAddon === 'Yes' ? 20 : 0;
-		// let shirtPrice = shirtAddon === 'Yes' ? 15 : 0;
-		// let total = REGISTRATION_PRICE + brunchPrice + shirtPrice;
+
+		let brunchPrice = brunchAddon === 'Yes' ? 20 : 0;
+		let shirtPrice = shirtAddon === 'Yes' ? 15 : 0;
+		let total = REGISTRATION_PRICE + brunchPrice + shirtPrice;
 		return (
 			<form className="form-design" onSubmit={handleSubmit}>
 				<h3> Payment </h3>
@@ -76,63 +77,41 @@ export class Payment extends React.Component<Props, State> {
 						Once you are completed with the payment, press next to finish the
 						registration process.
 					</p>
-					{/*
-							<div>
-								<ControlLabel>
-									Would you like to purchase tickets to the State of the
-									Conference Brunch, where the proceeds benefit the IYC
-									Scholarship and regionals? $20
-								</ControlLabel>
-								<div className="form-input">
-									<Field
-										name="sc brunch?"
-										component="input"
-										type="radio"
-										value="Yes"
-									/>{' '}
-									Yes{' '}
-									<Field
-										name="sc brunch?"
-										component="input"
-										type="radio"
-										value="No"
-									/>{' '}
-									No
-								</div>
-							</div>
-								<div>
-								<ControlLabel>
-									Would you like to add the official IYC shirt (available for
-									pickup at IYC)? $15
-								</ControlLabel>
-								<div className="form-input">
-									<Field
-										name="shirt?"
-										component="input"
-										type="radio"
-										value="Yes"
-									/>{' '}
-									Yes{' '}
-									<Field
-										name="shirt?"
-										component="input"
-										type="radio"
-										value="No"
-									/>{' '}
-									No
-								</div>
-							</div>
-							<Col md={6}>
-								{!this.state.complete && (
-									<Button
-										type="button"
-										className="previous"
-										onClick={handleBack}
-									>
-										Previous
-									</Button>
-								)}
-							</Col>*/}
+					<div>
+						<ControlLabel>
+							Would you like to purchase tickets to the State of the Conference
+							Brunch, where the proceeds benefit the IYC Scholarship and
+							regionals? $20
+						</ControlLabel>
+						<div className="form-input">
+							<Field
+								name="sc_brunch?"
+								component="input"
+								type="radio"
+								value="Yes"
+							/>{' '}
+							Yes{' '}
+							<Field
+								name="sc_brunch?"
+								component="input"
+								type="radio"
+								value="No"
+							/>{' '}
+							No
+						</div>
+					</div>
+					<div>
+						<ControlLabel>
+							Would you like to add the official IYC shirt (available for pickup
+							at IYC)? $15
+						</ControlLabel>
+						<div className="form-input">
+							<Field name="shirt?" component="input" type="radio" value="Yes" />{' '}
+							Yes{' '}
+							<Field name="shirt?" component="input" type="radio" value="No" />{' '}
+							No
+						</div>
+					</div>
 					{this.state.complete ? (
 						<Button
 							bsStyle="primary"
@@ -140,7 +119,7 @@ export class Payment extends React.Component<Props, State> {
 							align="right"
 							className="next"
 						>
-							Submit
+							Next
 						</Button>
 					) : (
 						<PayPalButton
@@ -148,7 +127,7 @@ export class Payment extends React.Component<Props, State> {
 							env={ENV}
 							commit={true}
 							currency={'USD'}
-							total={REGISTRATION_PRICE}
+							total={total}
 							onSuccess={onSuccess}
 							onError={onError}
 							onCancel={onCancel}

@@ -11,7 +11,6 @@ import Payment from './registration/payment/Payment';
 import Thanks from './registration/Thanks';
 import Transportation from './registration/Transportation';
 import IYC2018 from './registration/IYC2018';
-import Submission from './registration/Submission';
 import '../assets/styles/Registration.css';
 
 /* Registration Form for the Youth Leaders Summit 2018 
@@ -33,8 +32,9 @@ export class YouthRegistration extends React.Component {
 		let values = form['YouthSummitRegistration'].values;
 		values = {
 			...values,
-			church_role: values.church_role.join(),
+			church_role: values && values.church_role && values.church_role.join(),
 		};
+
 		const google_script =
 			'https://script.google.com/macros/s/AKfycbyq9k3YO8pillkstGOLSjWKZD-IZktdJpY-CeZzyChWCkLuwamr/exec';
 
@@ -94,12 +94,6 @@ export class YouthRegistration extends React.Component {
 						handleBack={this.previousPage}
 					/>
 				)}
-				{/*page === 6 && (
-					<Submission
-						handleSubmit={this.handleSubmit}
-						handleBack={this.previousPage}
-					/>
-				)*/}
 				{page === 6 && <Thanks />}
 			</div>
 		);

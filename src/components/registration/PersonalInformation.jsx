@@ -106,6 +106,7 @@ const PersonalInformation = ({ handleSubmit, handleBack }) => (
 					className="form-control"
 					component="input"
 					type="text"
+					required
 				/>
 			</div>
 			<div>

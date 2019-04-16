@@ -13,7 +13,7 @@ const CLIENT = {
 	production: paypalProductionKey,
 };
 
-const ENV = 'sandbox';
+const ENV = 'production';
 const REGISTRATION_PRICE = 75;
 type Props = {
 	brunchAddon: string,
@@ -46,7 +46,7 @@ export class Payment extends React.Component<Props, State> {
 		let total = REGISTRATION_PRICE + brunchPrice + shirtPrice;
 		return (
 			<form className="form-design" onSubmit={handleSubmit}>
-				<h3> Payment </h3>
+				{this.state.complete ? <h3>Submission</h3> : <h3>Payment</h3>}
 				<div>
 					{this.state.issue.exists && this.state.issue.reason === 'canceled' ? (
 						<div className="alert alert-danger" role="alert">
@@ -62,76 +62,89 @@ export class Payment extends React.Component<Props, State> {
 					) : (
 						''
 					)}
-					{this.state.complete && (
-						<div className="alert alert-success" role="alert">
-							Your payment was recieved! Please press submit to complete your
-							registration.
-						</div>
-					)}
-					<p>
-						To finish registration, you will be directed to PayPal to submit a
-						registration fee of $75. If you do not have a PayPal account, you
-						can click the 'Pay with Debit or Credit Card' Option.
-					</p>
-					<p>
-						Once you are completed with the payment, press next to finish the
-						registration process.
-					</p>
-					<div>
-						<ControlLabel>
-							Would you like to purchase tickets to the State of the Conference
-							Brunch, where the proceeds benefit the IYC Scholarship and
-							regionals? $20
-						</ControlLabel>
-						<div className="form-input">
-							<Field
-								name="sc_brunch?"
-								component="input"
-								type="radio"
-								value="Yes"
-							/>{' '}
-							Yes{' '}
-							<Field
-								name="sc_brunch?"
-								component="input"
-								type="radio"
-								value="No"
-							/>{' '}
-							No
-						</div>
-					</div>
-					<div>
-						<ControlLabel>
-							Would you like to add the official IYC shirt (available for pickup
-							at IYC)? $15
-						</ControlLabel>
-						<div className="form-input">
-							<Field name="shirt?" component="input" type="radio" value="Yes" />{' '}
-							Yes{' '}
-							<Field name="shirt?" component="input" type="radio" value="No" />{' '}
-							No
-						</div>
-					</div>
 					{this.state.complete ? (
-						<Button
-							bsStyle="primary"
-							type="submit"
-							align="right"
-							className="next"
-						>
-							Next
-						</Button>
+						<div>
+							<div className="alert alert-success" role="alert">
+								Your payment was recieved! Please press submit to complete your
+								registration.
+							</div>
+							<p> By pressing submit you will be registered for IYC 2019</p>
+							<Button
+								bsStyle="primary"
+								type="submit"
+								align="right"
+								className="next"
+							>
+								Submit
+							</Button>
+						</div>
 					) : (
-						<PayPalButton
-							client={CLIENT}
-							env={ENV}
-							commit={true}
-							currency={'USD'}
-							total={total}
-							onSuccess={onSuccess}
-							onError={onError}
-							onCancel={onCancel}
-						/>
+						<div>
+							<p>
+								To finish registration, you will be directed to PayPal to submit
+								a registration fee of $75. If you do not have a PayPal account,
+								you can click the 'Pay with Debit or Credit Card' Option.
+							</p>
+							<p>
+								Once you are completed with the payment, press next to finish
+								the registration process.
+							</p>
+							<div>
+								<ControlLabel>
+									Would you like to purchase tickets to the State of the
+									Conference Brunch, where the proceeds benefit the IYC
+									Scholarship and regionals? $20
+								</ControlLabel>
+								<div className="form-input">
+									<Field
+										name="sc_brunch?"
+										component="input"
+										type="radio"
+										value="Yes"
+									/>{' '}
+									Yes{' '}
+									<Field
+										name="sc_brunch?"
+										component="input"
+										type="radio"
+										value="No"
+									/>{' '}
+									No
+								</div>
+							</div>
+							<div>
+								<ControlLabel>
+									Would you like to add the official IYC shirt (available for
+									pickup at IYC)? $15
+								</ControlLabel>
+								<div className="form-input">
+									<Field
+										name="shirt?"
+										component="input"
+										type="radio"
+										value="Yes"
+									/>{' '}
+									Yes{' '}
+									<Field
+										name="shirt?"
+										component="input"
+										type="radio"
+										value="No"
+									/>{' '}
+									No
+								</div>
+							</div>
+							<PayPalButton
+								client={CLIENT}
+								env={ENV}
+								commit={true}
+								currency={'USD'}
+								total={total}
+								onSuccess={onSuccess}
+								onError={onError}
+								onCancel={onCancel}
+							/>
+						</div>
 					)}
 				</div>
 			</form>

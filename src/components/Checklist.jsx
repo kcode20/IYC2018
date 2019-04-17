@@ -1,5 +1,5 @@
 import React from 'react';
-import ChecklistPDF from '../assets/Summit.pdf';
+import ChecklistPDF from '../assets/IYC2019.pdf';
 
 const Checklist = () => {
 	return (

@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import axios from 'axios';
+import '../assets/styles/Countdown.css';
 
 /* Registration Form for the Youth Leaders Summit 2018 
 Todo: Find default for the branchname

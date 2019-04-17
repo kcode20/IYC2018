@@ -3,6 +3,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import logo from '../assets/images/iyc.png';
+import '../assets/styles/Navbar.css';
 
 const Navigation = ({ history }) => (
 	<Navbar inverse fixedTop collapseOnSelect>
@@ -19,16 +20,11 @@ const Navigation = ({ history }) => (
 				<NavItem eventKey={1} onClick={() => history.push('/register')}>
 					Register
 				</NavItem>
-				<Navbar.Text>
-					<Navbar.Link
-						href="https://goo.gl/forms/8VkbZtL0Qy5zfB1r2"
-						target="_blank"
-					>
-						Submit Suggestions
-					</Navbar.Link>
-				</Navbar.Text>
 				<NavItem eventKey={2} onClick={() => history.push('/checklist')}>
-					Summit Checklist
+					Checklist
+				</NavItem>
+				<NavItem eventKey={3} onClick={() => history.push('/gallery')}>
+					Gallery
 				</NavItem>
 			</Nav>
 		</Navbar.Collapse>

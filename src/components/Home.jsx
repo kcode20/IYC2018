@@ -1,65 +1,36 @@
 // @flow
 import React from 'react';
-import { Button, Carousel } from 'react-bootstrap';
-// import Countdown from './Countdown';
+import { Button } from 'react-bootstrap';
+import Countdown from './Countdown';
 import { Link } from 'react-router-dom';
 
-import HomePhoto from '../assets/images/iyc2.png';
-import NYCAerial from '../assets/images/NYC-Aerial.jpg';
+import HomePhoto from '../assets/images/Atlanta.jpg';
 import Xavius from '../assets/images/Xavius.png';
+import '../assets/styles/Home.css';
 
 const Home = () => {
-	// const deadline = new Date('August 26, 2018 8:00:00');
+	const deadline = new Date('August 28, 2019 8:00:00');
 	return (
 		<div className="home">
 			<div>
-				<Carousel>
-					<Carousel.Item>
-						<div className="cover">
-							<svg
-								className="triangle"
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 100 100"
-								preserveAspectRatio="none"
-							>
-								<polygon fill="gray" points="100,0 0,100 0,0" />
-								<polygon fill="orange" points="0,100 100,0 100,100" />
-							</svg>
-						</div>
-						<div className="header">
-							<Carousel.Caption>
-								<div className="head">
-									<h3> February 15th - 17th, 2019 </h3>
-									<h1> International Youth Conference Summit 2019</h1>
-									<p>Houston, TX</p>
-								</div>
-								<Link to="/register">
-									<Button bsStyle="warning" className="head-button">
-										Register Now!
-									</Button>
-								</Link>
-							</Carousel.Caption>
-						</div>
-					</Carousel.Item>
-					{/*<Carousel.Item>
-						<img width={900} height={500} alt="900x500" src={NYCAerial} />
-						<Carousel.Caption>
-							<h3>Second slide label</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-						</Carousel.Caption>
-					</Carousel.Item>
-					<Carousel.Item>
-						<img width={900} height={500} alt="900x500" src={HomePhoto} />
-						<Carousel.Caption>
-							<h3>Third slide label</h3>
-							<p>
-								Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-							</p>
-						</Carousel.Caption>
-					</Carousel.Item>*/}
-				</Carousel>
+				<div className="cover">
+					<img src={HomePhoto} />
+				</div>
+				<div className="header">
+					<div className="head section">
+						<Countdown endtime={deadline} />
+						<h1> International Youth Conference 2019</h1>
+						<h3> August 28th - September 1st, 2019 </h3>
+						<p>Atlanta, GA</p>
+						<Link to="/register">
+							<Button bsStyle="warning" className="head-button">
+								Register Now!
+							</Button>
+						</Link>
+					</div>
+				</div>
 			</div>
-			<div className="about">
+			<div className="about section">
 				<p>
 					“The strength of youth we lay, at Jesus feet today – tis loyalty,
 					loyalty, loyalty to Christ; his gospel we’ll proclaim throughout the
